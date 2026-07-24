@@ -24,10 +24,19 @@
   --ink-muted:#7C6D99;
   --line:rgba(139,92,246,0.18);
 }
+html[data-theme="dark"]{
+  --void:#1B0B33;
+  --panel:#241142;
+  --panel2:#2D1652;
+  --heading:#F5EEFF;
+  --ink:#E4D9FF;
+  --ink-muted:#B39FD6;
+  --line:rgba(220,194,255,0.16);
+}
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto;} *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important;}}
-body{background:radial-gradient(ellipse 120% 60% at 30% -10%, rgba(139,92,246,0.09), transparent 60%),radial-gradient(ellipse 100% 50% at 90% 20%, rgba(167,139,250,0.07), transparent 55%),var(--void);color:var(--ink);font-family:'Manrope',sans-serif;overflow-x:hidden;line-height:1.6;}
+body{background:radial-gradient(ellipse 120% 60% at 30% -10%, rgba(139,92,246,0.09), transparent 60%),radial-gradient(ellipse 100% 50% at 90% 20%, rgba(167,139,250,0.07), transparent 55%),var(--void);color:var(--ink);font-family:'Manrope',sans-serif;overflow-x:hidden;line-height:1.6;transition:background .35s ease,color .35s ease;}
 a{color:inherit;}
 a:focus-visible,button:focus-visible{outline:2px solid var(--glow);outline-offset:3px;border-radius:4px;}
 img{max-width:100%;display:block;}
@@ -71,6 +80,8 @@ img{max-width:100%;display:block;}
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,0.65);backdrop-filter:blur(18px);border-bottom:1px solid transparent;transition:border-color .3s ease,background .3s ease;}
 nav.scrolled{background:rgba(255,255,255,0.92);border-bottom:1px solid var(--line);box-shadow:0 4px 20px rgba(139,92,246,0.08);}
+html[data-theme="dark"] nav{background:rgba(27,11,51,0.65);}
+html[data-theme="dark"] nav.scrolled{background:rgba(27,11,51,0.92);}
 nav .nav-inner{display:flex;align-items:center;justify-content:space-between;height:74px;max-width:1320px;margin:0 auto;padding:0 48px;}
 @media (max-width:700px){nav .nav-inner{padding:0 22px;height:64px;}}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;}
@@ -82,9 +93,16 @@ nav .nav-inner{display:flex;align-items:center;justify-content:space-between;hei
 .nav-links a:hover{color:var(--heading);}
 .nav-links a:hover::after{width:100%;}
 .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;}
+.theme-toggle{display:flex;align-items:center;gap:6px;background:var(--panel2);border:1px solid var(--line);border-radius:50px;padding:6px 10px;cursor:pointer;font-size:13px;margin-right:6px;transition:background .25s ease,border-color .25s ease;}
+.theme-toggle:hover{border-color:var(--glow);}
+.theme-toggle .sun,.theme-toggle .moon{transition:opacity .25s;}
+html[data-theme="dark"] .theme-toggle .sun{opacity:.35;}
+html:not([data-theme="dark"]) .theme-toggle .moon{opacity:.35;}
+.nav-right{display:flex;align-items:center;}
 .burger span{width:22px;height:1.5px;background:var(--glow);border-radius:2px;}
 @media (max-width:900px){
   .nav-links{position:absolute;top:64px;left:0;right:0;flex-direction:column;background:rgba(255,255,255,0.97);backdrop-filter:blur(20px);max-height:0;overflow:hidden;transition:max-height .35s ease;gap:0;border-bottom:1px solid var(--line);box-shadow:0 10px 30px rgba(139,92,246,0.1);}
+  html[data-theme="dark"] .nav-links{background:rgba(27,11,51,0.97);}
   .nav-links.open{max-height:400px;}
   .nav-links li{width:100%;}
   .nav-links a{display:block;padding:16px 24px;border-top:1px solid var(--line);}
@@ -297,7 +315,10 @@ footer a{color:var(--glow);text-decoration:none;}
       <li><a href="#platforms">Platforms</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark and light mode"><span class="sun">☀️</span><span class="moon">🌙</span></button>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
   </div>
 </nav>
 
@@ -342,25 +363,7 @@ footer a{color:var(--glow);text-decoration:none;}
   </div>
 </div>
 
-<!-- PROFILE -->
-<section class="wrap">
-  <div class="profile reveal">
-    <div class="profile-photo">
-      <div class="inner"><img src="images/img5.jpg" alt="AI Wali Madam" /></div>
-    </div>
-    <div class="profile-text">
-      <h3>AI Wali Madam</h3>
-      <div class="role">AI EDUCATOR · DIGITAL ENTREPRENEUR · CONTENT CREATOR</div>
-      <p>Smart AI tools, templates, and prompts for your productivity and success. Ready-to-use digital solutions for students, freelancers, and businesses. Smart work, real results.</p>
-      <div class="profile-stats">
-        <div class="pstat"><div class="n">9K+</div><div class="l">YouTube Subs</div></div>
-        <div class="pstat"><div class="n">10+</div><div class="l">Services</div></div>
-        <div class="pstat"><div class="n">5+</div><div class="l">Platforms</div></div>
-        <div class="pstat"><div class="n">100%</div><div class="l">Digital</div></div>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 <!-- CREDENTIALS -->
 <section class="cred">
@@ -564,6 +567,19 @@ footer a{color:var(--glow);text-decoration:none;}
 
 <script>
 document.getElementById('yr').textContent = new Date().getFullYear();
+
+// theme toggle
+(function(){
+  const root=document.documentElement;
+  const btn=document.getElementById('themeToggle');
+  const saved=localStorage.getItem('aiwm-theme');
+  if(saved) root.setAttribute('data-theme',saved);
+  btn.addEventListener('click',()=>{
+    const isDark=root.getAttribute('data-theme')==='dark';
+    root.setAttribute('data-theme', isDark?'light':'dark');
+    localStorage.setItem('aiwm-theme', isDark?'light':'dark');
+  });
+})();
 
 // talking avatar speech bubble
 (function(){

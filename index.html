@@ -611,22 +611,37 @@ document.querySelectorAll('.plat-card .ic img').forEach(img=>{
   });
 })();
 
-// talking avatar video — only swap in once it actually loads; photo stays as safe default
+// talking avatar video — stays silent as a photo by default; plays once with sound on tap, then goes quiet again
 (function(){
   const video=document.getElementById('avatarVideo');
   const img=document.getElementById('avatarImg');
   const speakBtn=document.getElementById('speakBtn');
   if(!video || !speakBtn) return;
+  video.loop=false;
   let videoReady=false;
 
-  video.addEventListener('canplay',()=>{
-    videoReady=true;
+  video.addEventListener('canplaythrough',()=>{ videoReady=true; },{once:true});
+  video.addEventListener('error',()=>{ videoReady=false; });
+
+  function showPhoto(){
+    video.pause();
+    video.currentTime=0;
+    video.style.display='none';
+    img.style.display='block';
+    speakBtn.textContent='🔊';
+    speakBtn.classList.remove('speaking');
+    speakBtn.title='Tap to hear me';
+  }
+  function playSpeaking(){
     img.style.display='none';
     video.style.display='block';
+    video.muted=false;
+    video.currentTime=0;
     video.play().catch(()=>{});
-  },{once:true});
-
-  video.addEventListener('error',()=>{ videoReady=false; });
+    speakBtn.textContent='🔈';
+    speakBtn.classList.add('speaking');
+    speakBtn.title='Playing...';
+  }
 
   speakBtn.addEventListener('click',()=>{
     if(!videoReady){
@@ -635,13 +650,11 @@ document.querySelectorAll('.plat-card .ic img').forEach(img=>{
       setTimeout(()=>speakBtn.classList.remove('speaking'),500);
       return;
     }
-    video.muted=!video.muted;
-    if(!video.muted){ video.currentTime=0; video.play(); speakBtn.textContent='🔈'; speakBtn.classList.add('speaking'); speakBtn.title='Tap to mute'; }
-    else { speakBtn.textContent='🔊'; speakBtn.classList.remove('speaking'); speakBtn.title='Tap to hear me'; }
+    if(speakBtn.classList.contains('speaking')) showPhoto();
+    else playSpeaking();
   });
-  video.addEventListener('ended',()=>{
-    if(!video.muted){ video.muted=true; speakBtn.textContent='🔊'; speakBtn.classList.remove('speaking'); speakBtn.title='Tap to hear me'; }
-  });
+
+  video.addEventListener('ended',showPhoto);
 })();
 
 // mobile nav

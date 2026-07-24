@@ -149,20 +149,13 @@ html:not([data-theme="dark"]) .theme-toggle .moon{opacity:.35;}
 
 .avatar-ring{position:relative;width:clamp(240px,26vw,380px);aspect-ratio:1;border-radius:50%;box-shadow:0 30px 80px rgba(139,79,236,.35);}
 .avatar-ring .inner{width:100%;height:100%;border-radius:50%;overflow:hidden;background:var(--void);position:relative;}
-.avatar-ring img{width:100%;height:100%;object-fit:cover;object-position:center;transform:scale(1);}
+.avatar-ring img,.avatar-ring video{width:100%;height:100%;object-fit:cover;object-position:center;}
 .avatar-ring .inner::after{content:'';position:absolute;top:-20%;left:-60%;width:35%;height:140%;background:linear-gradient(120deg,transparent,rgba(255,255,255,.18),transparent);animation:shineSweep 6s ease-in-out infinite;pointer-events:none;}
 
 .avatar-stage{position:relative;display:flex;justify-content:center;}
-.speech-bubble{position:absolute;top:0;right:2%;max-width:230px;width:max-content;background:var(--panel2);border:1px solid var(--line);border-radius:18px 18px 4px 18px;padding:13px 40px 13px 17px;font-family:'Manrope',sans-serif;font-size:12.5px;font-weight:600;line-height:1.45;color:var(--heading);box-shadow:0 16px 40px rgba(0,0,0,.18);z-index:6;overflow-wrap:break-word;word-break:break-word;}
-.speak-btn{position:absolute;top:8px;right:8px;width:24px;height:24px;border-radius:50%;border:1px solid var(--line);background:var(--void);cursor:pointer;font-size:11px;display:flex;align-items:center;justify-content:center;padding:0;transition:all .2s;}
-.speak-btn:hover{border-color:var(--glow);transform:scale(1.1);}
-.speak-btn.speaking{animation:pulseDot 1s ease-in-out infinite;border-color:var(--glow);}
-.speech-bubble::after{content:'';position:absolute;bottom:-8px;right:26px;width:16px;height:16px;background:var(--panel2);border-right:1px solid var(--line);border-bottom:1px solid var(--line);transform:rotate(45deg);}
-.speech-cursor{display:inline-block;width:2px;height:13px;background:var(--glow);margin-left:2px;animation:pulseGlow 1s steps(2) infinite;vertical-align:middle;}
-@media (max-width:960px){
-  .speech-bubble{position:static;margin:18px auto 0;max-width:260px;border-radius:18px 18px 18px 4px;}
-  .speech-bubble::after{right:auto;left:26px;}
-}
+.speak-btn{position:absolute;bottom:6%;right:6%;width:46px;height:46px;border-radius:50%;border:2px solid var(--void);background:linear-gradient(135deg,var(--core),var(--core2));color:#fff;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;padding:0;box-shadow:0 10px 26px rgba(139,79,236,.45);transition:transform .2s;z-index:6;}
+.speak-btn:hover{transform:scale(1.08);}
+.speak-btn.speaking{animation:pulseDot 1.2s ease-in-out infinite;}
 
 /* MARQUEE */
 .marquee-section{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:16px 0;background:var(--panel);overflow:hidden;position:relative;z-index:1;}
@@ -358,12 +351,11 @@ footer a{color:var(--glow);text-decoration:none;}
     <div class="hero-right reveal in d2">
       <div class="avatar-stage">
         <div class="avatar-ring">
-          <div class="inner"><img src="images/img4.jpg" alt="AiwaliMadam avatar" /></div>
+          <div class="inner">
+            <video id="avatarVideo" src="images/avatar-talking.mp4" poster="images/img4.jpg" autoplay muted loop playsinline></video>
+          </div>
         </div>
-        <div class="speech-bubble">
-          <span id="speechText"></span><span class="speech-cursor"></span>
-          <button class="speak-btn" id="speakBtn" aria-label="Hear AiwaliMadam speak" title="Tap to hear me">🔊</button>
-        </div>
+        <button class="speak-btn" id="speakBtn" aria-label="Hear AiwaliMadam speak" title="Tap to hear me">🔊</button>
       </div>
     </div>
   </div>
@@ -618,72 +610,19 @@ document.querySelectorAll('.plat-card .ic img').forEach(img=>{
   });
 })();
 
-// talking avatar speech bubble — with real voice (Web Speech API)
+// talking avatar video — tap speaker to unmute the lip-synced video
 (function(){
-  const el=document.getElementById('speechText');
+  const video=document.getElementById('avatarVideo');
   const speakBtn=document.getElementById('speakBtn');
-  if(!el) return;
-  const lines=[
-    "Hi, I'm AiwaliMadam 👋",
-    "Welcome to my website ✨",
-    "Scroll down, you'll find something for you 👇",
-    "Canva design, AI prompts, thumbnails, all by me",
-    "Let's create something amazing together!"
-  ];
-  const cleanLines=lines.map(l=>l.replace(/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}]/gu,'').trim());
-
-  let voiceOn=false, voices=[], chosenVoice=null;
-  function loadVoices(){
-    voices=window.speechSynthesis?window.speechSynthesis.getVoices():[];
-    chosenVoice = voices.find(v=>/female|zira|samantha|victoria|susan|karen|moira|tessa/i.test(v.name) && /en/i.test(v.lang))
-               || voices.find(v=>/en/i.test(v.lang))
-               || voices[0] || null;
-  }
-  if(window.speechSynthesis){
-    loadVoices();
-    window.speechSynthesis.onvoiceschanged=loadVoices;
-  }
-  function speak(text){
-    if(!voiceOn || !window.speechSynthesis) return;
-    window.speechSynthesis.cancel();
-    const u=new SpeechSynthesisUtterance(text);
-    if(chosenVoice) u.voice=chosenVoice;
-    u.pitch=1.1; u.rate=1; u.volume=1;
-    u.onstart=()=>speakBtn && speakBtn.classList.add('speaking');
-    u.onend=()=>speakBtn && speakBtn.classList.remove('speaking');
-    window.speechSynthesis.speak(u);
-  }
-  if(speakBtn){
-    speakBtn.addEventListener('click',()=>{
-      voiceOn=!voiceOn;
-      speakBtn.textContent=voiceOn?'🔈':'🔊';
-      speakBtn.title=voiceOn?'Tap to mute':'Tap to hear me';
-      if(voiceOn) speak(cleanLines[li]);
-      else if(window.speechSynthesis) window.speechSynthesis.cancel();
-    });
-  }
-
-  let li=0, ci=0, deleting=false;
-  function tick(){
-    const full=lines[li];
-    if(!deleting){
-      ci++;
-      el.textContent=full.slice(0,ci);
-      if(ci===full.length){
-        deleting=true;
-        speak(cleanLines[li]);
-        setTimeout(tick,1700);
-        return;
-      }
-      setTimeout(tick,45);
-    } else {
-      ci--;
-      el.textContent=full.slice(0,ci);
-      if(ci===0){ deleting=false; li=(li+1)%lines.length; setTimeout(tick,400); return; }
-      setTimeout(tick,22);
-    }
-  }
-  tick();
+  if(!video || !speakBtn) return;
+  speakBtn.addEventListener('click',()=>{
+    video.muted=!video.muted;
+    if(!video.muted){ video.currentTime=0; video.play(); speakBtn.textContent='🔈'; speakBtn.classList.add('speaking'); speakBtn.title='Tap to mute'; }
+    else { speakBtn.textContent='🔊'; speakBtn.classList.remove('speaking'); speakBtn.title='Tap to hear me'; }
+  });
+  video.addEventListener('ended',()=>{
+    if(!video.muted){ video.muted=true; speakBtn.textContent='🔊'; speakBtn.classList.remove('speaking'); speakBtn.title='Tap to hear me'; }
+  });
 })();
 
 // mobile nav

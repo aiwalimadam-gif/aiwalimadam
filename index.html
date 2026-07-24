@@ -745,32 +745,39 @@ window.addEventListener('scroll',()=>{
 const nav=document.getElementById('mainNav');
 window.addEventListener('scroll',()=>{ nav.classList.toggle('scrolled', window.scrollY>30); });
 
-// scroll reveal
+// scroll reveal — replays every time an element enters or leaves view
 const io=new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  entries.forEach(e=>{ e.target.classList.toggle('in', e.isIntersecting); });
 },{threshold:0.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-// animated count-up for credential stats
+// animated count-up for credential stats — replays every time it scrolls into view
 (function(){
   const nums=document.querySelectorAll('.cred-stat .n[data-count]');
   if(!nums.length) return;
+  const running=new WeakSet();
   const countIo=new IntersectionObserver((entries)=>{
     entries.forEach(e=>{
-      if(!e.isIntersecting) return;
       const el=e.target;
-      const target=parseInt(el.dataset.count,10);
-      const suffix=el.dataset.suffix||'';
-      const dur=1100;
-      const start=performance.now();
-      function step(now){
-        const p=Math.min((now-start)/dur,1);
-        const eased=1-Math.pow(1-p,3);
-        el.textContent=Math.round(eased*target)+suffix;
-        if(p<1) requestAnimationFrame(step);
+      if(e.isIntersecting){
+        if(running.has(el)) return;
+        running.add(el);
+        const target=parseInt(el.dataset.count,10);
+        const suffix=el.dataset.suffix||'';
+        const dur=2200;
+        const start=performance.now();
+        function step(now){
+          const p=Math.min((now-start)/dur,1);
+          const eased=1-Math.pow(1-p,3);
+          el.textContent=Math.round(eased*target)+suffix;
+          if(p<1) requestAnimationFrame(step);
+          else running.delete(el);
+        }
+        requestAnimationFrame(step);
+      } else {
+        running.delete(el);
+        el.textContent='0';
       }
-      requestAnimationFrame(step);
-      countIo.unobserve(el);
     });
   },{threshold:0.4});
   nums.forEach(n=>countIo.observe(n));

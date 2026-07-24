@@ -122,25 +122,24 @@ nav .nav-inner{display:flex;align-items:center;justify-content:space-between;hei
 
 .avatar-ring{position:relative;width:clamp(240px,26vw,380px);aspect-ratio:1;border-radius:50%;padding:5px;background:conic-gradient(from var(--angle,0deg),var(--core),var(--glow),var(--deep),var(--core));animation:spin 7s linear infinite;box-shadow:0 30px 80px rgba(139,79,236,.4);}
 .avatar-ring .inner{width:100%;height:100%;border-radius:50%;overflow:hidden;background:var(--void);border:5px solid var(--void);position:relative;}
-.avatar-ring img{width:100%;height:100%;object-fit:cover;object-position:78% 38%;transform:scale(1.55);}
+.avatar-ring img{width:100%;height:100%;object-fit:cover;object-position:64% 42%;transform:scale(2.05);}
 .avatar-ring .inner::after{content:'';position:absolute;top:-20%;left:-60%;width:50%;height:140%;background:linear-gradient(120deg,transparent,rgba(255,255,255,.28),transparent);animation:shineSweep 5s ease-in-out infinite;pointer-events:none;}
 
 .avatar-stage{position:relative;display:flex;justify-content:center;}
-.speech-bubble{position:absolute;top:2%;right:-6%;max-width:220px;background:var(--panel2);border:1px solid var(--line);border-radius:18px 18px 4px 18px;padding:14px 18px;font-family:'Manrope',sans-serif;font-size:13px;font-weight:600;color:var(--heading);box-shadow:0 16px 40px rgba(0,0,0,.5);z-index:6;min-height:44px;display:flex;align-items:center;}
+.speech-bubble{position:absolute;top:0;right:2%;max-width:230px;width:max-content;background:var(--panel2);border:1px solid var(--line);border-radius:18px 18px 4px 18px;padding:13px 17px;font-family:'Manrope',sans-serif;font-size:12.5px;font-weight:600;line-height:1.45;color:var(--heading);box-shadow:0 16px 40px rgba(0,0,0,.18);z-index:6;overflow-wrap:break-word;word-break:break-word;}
 .speech-bubble::after{content:'';position:absolute;bottom:-8px;right:26px;width:16px;height:16px;background:var(--panel2);border-right:1px solid var(--line);border-bottom:1px solid var(--line);transform:rotate(45deg);}
-.speech-cursor{display:inline-block;width:2px;height:14px;background:var(--glow);margin-left:2px;animation:pulseGlow 1s steps(2) infinite;vertical-align:middle;}
+.speech-cursor{display:inline-block;width:2px;height:13px;background:var(--glow);margin-left:2px;animation:pulseGlow 1s steps(2) infinite;vertical-align:middle;}
 @media (max-width:960px){
   .speech-bubble{position:static;margin:18px auto 0;max-width:260px;border-radius:18px 18px 18px 4px;}
   .speech-bubble::after{right:auto;left:26px;}
 }
 
 /* MARQUEE */
-.marquee-section{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0;background:var(--panel);overflow:hidden;position:relative;z-index:1;}
+.marquee-section{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:16px 0;background:var(--panel);overflow:hidden;position:relative;z-index:1;}
 .marquee-row{display:flex;width:max-content;gap:0;}
-.marquee-row.left{animation:scrollLeft 32s linear infinite;}
-.marquee-row.right{animation:scrollRight 32s linear infinite;margin-top:10px;}
-.marquee-row span{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;color:var(--ink-muted);padding:0 34px;white-space:nowrap;display:flex;align-items:center;gap:10px;}
-.marquee-row span::after{content:'✦';color:var(--core2);}
+.marquee-row.left{animation:scrollLeft 38s linear infinite;}
+.marquee-row span{font-family:'JetBrains Mono',monospace;font-size:12.5px;font-weight:500;color:var(--ink-muted);padding:0 30px;white-space:nowrap;display:flex;align-items:center;gap:9px;}
+.marquee-row span::after{content:'✦';color:var(--core2);font-size:10px;}
 .marquee-section:hover .marquee-row{animation-play-state:paused;}
 
 section{padding:100px 0;position:relative;z-index:1;}
@@ -335,12 +334,8 @@ footer a{color:var(--glow);text-decoration:none;}
 <!-- MARQUEE -->
 <div class="marquee-section">
   <div class="marquee-row left">
-    <span>Canva Design</span><span>Video Editing</span><span>AI Automation</span><span>Academic Support</span><span>Social Media</span><span>CV Templates</span>
-    <span>Canva Design</span><span>Video Editing</span><span>AI Automation</span><span>Academic Support</span><span>Social Media</span><span>CV Templates</span>
-  </div>
-  <div class="marquee-row right">
-    <span>Pinterest Pins</span><span>YouTube Thumbnails</span><span>AI Prompts</span><span>Brand Kits</span><span>Presentation Decks</span><span>Research Support</span>
-    <span>Pinterest Pins</span><span>YouTube Thumbnails</span><span>AI Prompts</span><span>Brand Kits</span><span>Presentation Decks</span><span>Research Support</span>
+    <span>Canva Design</span><span>Video Editing</span><span>YouTube Thumbnails</span><span>AI Prompts</span><span>CV Templates</span><span>Pinterest Pins</span>
+    <span>Canva Design</span><span>Video Editing</span><span>YouTube Thumbnails</span><span>AI Prompts</span><span>CV Templates</span><span>Pinterest Pins</span>
   </div>
 </div>
 

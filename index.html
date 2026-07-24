@@ -16,7 +16,8 @@
   --deep:#6D28D9;
   --core:#8B5CF6;
   --core2:#A78BFA;
-  --glow:#9B5DE5;
+  --glow:#C026D3;
+  --glow2:#F0ABFC;
   --white:#FFFFFF;
   --heading:#251341;
   --ink:#3A2A5C;
@@ -35,6 +36,8 @@ img{max-width:100%;display:block;}
 @keyframes spin{to{--angle:360deg;}}
 @keyframes scrollLeft{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 @keyframes scrollRight{from{transform:translateX(-50%);}to{transform:translateX(0);}}
+@keyframes shimmerText{0%{background-position:0% 50%;}100%{background-position:200% 50%;}}
+.shine-text{background:linear-gradient(90deg,var(--glow) 0%,var(--glow2) 25%,var(--core) 50%,var(--glow2) 75%,var(--glow) 100%);background-size:200% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:var(--glow);animation:shimmerText 5s linear infinite;}
 @keyframes shineSweep{0%{transform:translateX(-160%) skewX(-20deg);}55%,100%{transform:translateX(220%) skewX(-20deg);}}
 @keyframes floatY{0%,100%{transform:translateY(0);}50%{transform:translateY(-14px);}}
 @keyframes pulseGlow{0%,100%{opacity:.55;}50%{opacity:1;}}
@@ -105,7 +108,7 @@ nav .nav-inner{display:flex;align-items:center;justify-content:space-between;hei
 .hero-left{flex:0 0 48%;}
 .hero-right{flex:1;display:flex;justify-content:center;}
 .hero h1{font-family:'Fraunces',serif;font-style:italic;font-weight:600;font-size:clamp(46px,6.2vw,88px);line-height:1.02;letter-spacing:-1px;color:var(--heading);margin-bottom:14px;}
-.hero h1 em{color:var(--glow);font-style:italic;}
+.hero h1 em{font-style:italic;background:linear-gradient(90deg,var(--glow) 0%,var(--glow2) 25%,var(--core) 50%,var(--glow2) 75%,var(--glow) 100%);background-size:200% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:var(--glow);animation:shimmerText 5s linear infinite;}
 .hero .tagline{font-family:'Fraunces',serif;font-style:italic;font-weight:500;font-size:clamp(17px,2vw,23px);color:var(--ink-muted);margin-bottom:26px;}
 .hero-pills{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:32px;}
 @media (max-width:960px){.hero-pills{justify-content:center;}}
@@ -145,7 +148,7 @@ nav .nav-inner{display:flex;align-items:center;justify-content:space-between;hei
 section{padding:100px 0;position:relative;z-index:1;}
 .sec-head{margin-bottom:52px;max-width:640px;}
 .sec-head h2{font-family:'Fraunces',serif;font-style:italic;font-weight:600;font-size:clamp(28px,4vw,44px);color:var(--heading);line-height:1.15;}
-.sec-head h2 em{color:var(--glow);font-style:italic;}
+.sec-head h2 em{font-style:italic;background:linear-gradient(90deg,var(--glow) 0%,var(--glow2) 25%,var(--core) 50%,var(--glow2) 75%,var(--glow) 100%);background-size:200% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:var(--glow);animation:shimmerText 5s linear infinite;}
 .sec-head p{color:var(--ink-muted);margin-top:14px;font-size:15px;max-width:520px;}
 
 /* PROFILE */
@@ -244,7 +247,7 @@ section{padding:100px 0;position:relative;z-index:1;}
 /* CONTACT */
 .contact-section{text-align:center;}
 .contact-section h2{font-family:'Fraunces',serif;font-style:italic;font-weight:600;font-size:clamp(30px,5vw,54px);color:var(--heading);margin-bottom:14px;}
-.contact-section h2 em{color:var(--glow);}
+.contact-section h2 em{background:linear-gradient(90deg,var(--glow) 0%,var(--glow2) 25%,var(--core) 50%,var(--glow2) 75%,var(--glow) 100%);background-size:200% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:var(--glow);animation:shimmerText 5s linear infinite;}
 .contact-section p{color:var(--ink-muted);font-size:15px;max-width:480px;margin:0 auto 36px;}
 .cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
 .cta-btn{display:inline-flex;align-items:center;gap:9px;padding:13px 24px;border-radius:50px;font-size:13.5px;font-weight:700;text-decoration:none;transition:transform .25s;border:1px solid var(--line);color:var(--heading);background:var(--panel2);}
@@ -363,7 +366,7 @@ footer a{color:var(--glow);text-decoration:none;}
 <section class="cred">
   <div class="wrap reveal">
     <div class="eyebrow">Verified Credentials</div>
-    <h2 class="sec-head" style="margin-bottom:0;"><span style="font-family:'Fraunces',serif;font-style:italic;font-weight:600;font-size:clamp(26px,3.6vw,38px);color:var(--heading);">Real expertise <em style="color:var(--glow);">behind every tool</em></span></h2>
+    <h2 class="sec-head" style="margin-bottom:0;"><span style="font-family:'Fraunces',serif;font-style:italic;font-weight:600;font-size:clamp(26px,3.6vw,38px);color:var(--heading);">Real expertise <em class="shine-text" style="font-style:italic;">behind every tool</em></span></h2>
     <p style="color:var(--ink-muted);margin-top:14px;max-width:560px;font-size:14.5px;">MS Computer Science, PhD candidate, 10+ years teaching. Every design and prompt is built by someone who understands both the tech and the classroom.</p>
 
     <div class="cred-stats">

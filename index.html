@@ -1,0 +1,3268 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      AiwaliMadam | AI Tools, Canva Design & Digital Services in Lahore
+    </title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+    <meta
+      name="description"
+      content="AI-powered Canva design, video editing, YouTube thumbnails, ready-made AI prompts, CV templates and academic support. Run by an MS Computer Science lecturer and PhD candidate, based in Lahore, Pakistan."
+    />
+    <meta
+      name="keywords"
+      content="AI services Lahore, Canva design Pakistan, YouTube thumbnail design, AI prompts for teachers, video editing services, CV templates, academic support"
+    />
+    <meta name="author" content="Rabia Abbas - AiwaliMadam" />
+    <link
+      rel="canonical"
+      href="https://aiwalimadam-gif.github.io/aiwalimadam/"
+    />
+
+    <!-- Open Graph / WhatsApp, Facebook, Instagram link previews -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="AiwaliMadam | Where AI Meets Excellence"
+    />
+    <meta
+      property="og:description"
+      content="AI-powered Canva design, video editing, YouTube thumbnails, AI prompts, CV templates and academic support. Designed and delivered personally by an MS CS lecturer and PhD candidate."
+    />
+    <meta
+      property="og:image"
+      content="https://aiwalimadam-gif.github.io/aiwalimadam/images/hero-banner.jpg"
+    />
+    <meta
+      property="og:url"
+      content="https://aiwalimadam-gif.github.io/aiwalimadam/"
+    />
+    <meta property="og:site_name" content="AiwaliMadam" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="AiwaliMadam | Where AI Meets Excellence"
+    />
+    <meta
+      name="twitter:description"
+      content="AI-powered Canva design, video editing, YouTube thumbnails, AI prompts, CV templates and academic support."
+    />
+    <meta
+      name="twitter:image"
+      content="https://aiwalimadam-gif.github.io/aiwalimadam/images/hero-banner.jpg"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="images/img1.jpg" />
+    <link rel="apple-touch-icon" href="images/img2.jpg" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Dancing+Script:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+  --purple: #7C5FBD;
+  --purpleDark: #4E3A82;
+  --purple2: #9B87C4;
+  --violet: #8B6FC9;
+  --gold: #C9B8F0;
+  --gold2: #E4D9FF;
+  --pink: #D8CCFF;
+  --light: #F7F4FF;
+  --white: #ffffff;
+  --text: #3D2E5C;
+  --dim: #8577A3;
+  --bg: #FDFCFF;
+  --card-bg: #ffffff;
+  --card-border: rgba(139, 111, 201, 0.18);
+  --grad: linear-gradient(135deg, #9B87C4, #C9B8F0);
+  --grad2: linear-gradient(135deg, #C9B8F0, #F0E6FF);
+  --grad3: linear-gradient(135deg, #B7A6E0, #8B6FC9);
+}
+      html[data-theme="dark"] {
+        --text: #F1EBFF;
+        --dim: #C4B5E8;
+        --bg: #241A3D;
+        --card-bg: #362852;
+        --card-border: rgba(201, 184, 240, 0.22);
+        --light: #4E3A82;
+      }
+      html[data-theme="dark"] .sec-head h2,
+      html[data-theme="dark"] .profile-text h2,
+      html[data-theme="dark"] .profile-text .role,
+      html[data-theme="dark"] .profile-stats .n,
+      html[data-theme="dark"] .profile-stats .l,
+      html[data-theme="dark"] .svc-card h3,
+      html[data-theme="dark"] .prod-price,
+      html[data-theme="dark"] .why-card h3 {
+        color: var(--gold2);
+      }
+      html[data-theme="dark"] .sec-head h2 span {
+        color: var(--pink);
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        [data-aos] {
+          transition-duration: 900ms !important;
+        }
+      }
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: "Poppins", sans-serif;
+        overflow-x: hidden;
+        transition:
+          background 0.35s ease,
+          color 0.35s ease;
+      }
+      a {
+        outline-offset: 3px;
+      }
+      a:focus-visible,
+      button:focus-visible {
+        outline: 2px solid var(--gold2);
+        outline-offset: 3px;
+        border-radius: 4px;
+      }
+
+      /* SCROLL PROGRESS */
+      .scroll-progress {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 3px;
+        width: 0%;
+        background: var(--grad3);
+        z-index: 999;
+        transition: width 0.1s linear;
+      }
+
+      /* THEME TOGGLE */
+      .theme-toggle {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        background: rgba(255, 255, 255, 0.14);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50px;
+        padding: 5px 10px;
+        cursor: pointer;
+        color: #fff;
+        font-size: 13px;
+        transition: all 0.25s;
+      }
+      .theme-toggle:hover {
+        background: rgba(255, 255, 255, 0.22);
+      }
+      .theme-toggle .sun,
+      .theme-toggle .moon {
+        transition:
+          opacity 0.25s,
+          transform 0.4s;
+      }
+      html[data-theme="dark"] .theme-toggle .sun {
+        opacity: 0.35;
+      }
+      html:not([data-theme="dark"]) .theme-toggle .moon {
+        opacity: 0.35;
+      }
+
+      /* CARD THEMES (dark-mode aware) */
+      .svc-card,
+      .prod-card,
+      .why-card {
+        background: var(--card-bg);
+        border-color: var(--card-border);
+      }
+      html[data-theme="dark"] .svc-card,
+      html[data-theme="dark"] .prod-card,
+      html[data-theme="dark"] .why-card {
+        background: var(--card-bg);
+      }
+
+      .products-section {
+        background: var(--bg);
+      }
+      html[data-theme="dark"] .products-section {
+        background: linear-gradient(135deg, #241A3D, #2E2150);
+      }
+
+      /* CHATBOT WIDGET */
+      .chat-fab {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: var(--grad3);
+        box-shadow: 0 8px 26px rgba(124, 95, 189, 0.45);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 998;
+        border: 2px solid var(--gold);
+        transition: transform 0.25s;
+      }
+      .chat-fab:hover {
+        transform: scale(1.08);
+      }
+      .chat-fab svg {
+        width: 26px;
+        height: 26px;
+        fill: #fff;
+      }
+      .chat-fab .dot {
+        position: absolute;
+        top: 6px;
+        right: 6px;
+        width: 12px;
+        height: 12px;
+        background: var(--gold2);
+        border-radius: 50%;
+        border: 2px solid var(--purple);
+      }
+      .chat-panel {
+        position: fixed;
+        bottom: 96px;
+        right: 24px;
+        width: 340px;
+        max-width: 88vw;
+        height: 440px;
+        max-height: 70vh;
+        background: var(--card-bg);
+        border-radius: 20px;
+        box-shadow: 0 20px 60px rgba(124, 95, 189, 0.28);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        z-index: 998;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(16px) scale(0.97);
+        transition: all 0.3s cubic-bezier(0.2, 0.8, 0.3, 1);
+        border: 1px solid var(--card-border);
+      }
+      .chat-panel.open {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0) scale(1);
+      }
+      .chat-head {
+        background: var(--grad3);
+        color: #fff;
+        padding: 14px 16px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .chat-head .av {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        background: var(--gold);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+      }
+      .chat-head .info h4 {
+        font-size: 14px;
+      }
+      .chat-head .info span {
+        font-size: 11px;
+        opacity: 0.85;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+      .chat-head .info span::before {
+        content: "";
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #4ade80;
+        display: inline-block;
+      }
+      .chat-close {
+        margin-left: auto;
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 18px;
+        cursor: pointer;
+        line-height: 1;
+        padding: 4px;
+      }
+      .chat-body {
+        flex: 1;
+        overflow-y: auto;
+        padding: 14px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        background: var(--bg);
+      }
+      .chat-msg {
+        max-width: 82%;
+        padding: 9px 13px;
+        border-radius: 14px;
+        font-size: 12.5px;
+        line-height: 1.5;
+      }
+      .chat-msg.bot {
+        background: var(--card-bg);
+        color: var(--text);
+        border: 1px solid var(--card-border);
+        border-bottom-left-radius: 4px;
+        align-self: flex-start;
+      }
+      .chat-msg.user {
+        background: var(--grad3);
+        color: #fff;
+        border-bottom-right-radius: 4px;
+        align-self: flex-end;
+      }
+      .chat-quick {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        padding: 0 14px 10px;
+        background: var(--bg);
+      }
+      .chat-quick button {
+        background: var(--card-bg);
+        border: 1px solid var(--card-border);
+        color: var(--violet);
+        font-size: 11px;
+        padding: 6px 10px;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      .chat-quick button:hover {
+        background: var(--grad3);
+        color: #fff;
+      }
+      .chat-input {
+        display: flex;
+        gap: 8px;
+        padding: 12px;
+        border-top: 1px solid var(--card-border);
+        background: var(--card-bg);
+      }
+      .chat-input input {
+        flex: 1;
+        border: 1px solid var(--card-border);
+        border-radius: 50px;
+        padding: 9px 14px;
+        font-family: inherit;
+        font-size: 12.5px;
+        background: var(--bg);
+        color: var(--text);
+      }
+      .chat-input input:focus {
+        outline: 2px solid var(--violet);
+      }
+      .chat-input button {
+        background: var(--grad2);
+        border: none;
+        color: #3D2E5C;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 15px;
+        flex-shrink: 0;
+      }
+      @media (max-width: 480px) {
+        .chat-panel {
+          right: 12px;
+          bottom: 88px;
+          width: calc(100vw - 24px);
+        }
+        .chat-fab {
+          right: 16px;
+          bottom: 16px;
+        }
+      }
+
+      /* HERO ROTATING WORDS */
+      .hero-rotator {
+        position: relative;
+        height: 1.6em;
+        overflow: hidden;
+        margin-bottom: 14px;
+      }
+      .hero-rotator ul {
+        list-style: none;
+        position: relative;
+      }
+      .hero-rotator li {
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: var(--gold2);
+        font-weight: 600;
+        font-size: clamp(13px, 2vw, 17px);
+        opacity: 0;
+        transform: translateY(100%);
+        animation: rotateWord 9s infinite;
+        white-space: nowrap;
+      }
+      .hero-rotator li:nth-child(1) {
+        animation-delay: 0s;
+      }
+      .hero-rotator li:nth-child(2) {
+        animation-delay: 1.5s;
+      }
+      .hero-rotator li:nth-child(3) {
+        animation-delay: 3s;
+      }
+      .hero-rotator li:nth-child(4) {
+        animation-delay: 4.5s;
+      }
+      .hero-rotator li:nth-child(5) {
+        animation-delay: 6s;
+      }
+      .hero-rotator li:nth-child(6) {
+        animation-delay: 7.5s;
+      }
+      @keyframes rotateWord {
+        0% {
+          opacity: 0;
+          transform: translateY(60%);
+        }
+        4% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        15% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        19% {
+          opacity: 0;
+          transform: translateY(-60%);
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+
+      /* BG BLOBS */
+      .blob1 {
+        position: fixed;
+        width: 500px;
+        height: 500px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(201, 184, 240, 0.45), transparent 70%);
+        top: -100px;
+        left: -100px;
+        pointer-events: none;
+        z-index: 0;
+        animation: driftBlob1 18s ease-in-out infinite;
+      }
+      .blob2 {
+        position: fixed;
+        width: 400px;
+        height: 400px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(216, 204, 255, 0.45), transparent 70%);
+        bottom: -80px;
+        right: -80px;
+        pointer-events: none;
+        z-index: 0;
+        animation: driftBlob2 22s ease-in-out infinite;
+      }
+      @keyframes driftBlob1 {
+        0%,
+        100% {
+          transform: translate(0, 0) scale(1);
+        }
+        50% {
+          transform: translate(40px, 30px) scale(1.08);
+        }
+      }
+      @keyframes driftBlob2 {
+        0%,
+        100% {
+          transform: translate(0, 0) scale(1);
+        }
+        50% {
+          transform: translate(-35px, -25px) scale(1.06);
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .blob1,
+        .blob2 {
+          animation: none;
+        }
+      }
+
+      /* REVEAL — Framer-style fade + rise + soft blur */
+      .reveal {
+        opacity: 0;
+        transform: translateY(28px) scale(0.98);
+        filter: blur(6px);
+        transition:
+          opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+          transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+          filter 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        will-change: opacity, transform, filter;
+      }
+      .reveal.in {
+        opacity: 1;
+        transform: none;
+        filter: blur(0);
+      }
+      .d1 {
+        transition-delay: 0.1s;
+      }
+      .d2 {
+        transition-delay: 0.2s;
+      }
+      .d3 {
+        transition-delay: 0.3s;
+      }
+
+      /* NAV */
+      nav {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: var(--purple);
+        backdrop-filter: blur(16px);
+        transition:
+          box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+          background 0.35s ease;
+      }
+      nav.nav-scrolled {
+        box-shadow: 0 8px 30px rgba(78, 58, 130, 0.25);
+      }
+      html[data-theme="dark"] nav {
+        background: var(--purpleDark);
+      }
+      nav .wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 64px;
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 0 64px;
+        transition: height 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      nav.nav-scrolled .wrap {
+        height: 54px;
+      }
+      .nav-logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+      }
+      .nav-logo img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 2px solid var(--gold);
+      }
+      .nav-logo span {
+        font-size: 22px;
+        color: var(--white);
+        font-weight: 700;
+      }
+      .nav-links {
+        display: flex;
+        gap: 24px;
+        list-style: none;
+      }
+      .nav-links a {
+        color: var(--white);
+        text-decoration: none;
+        font-size: 13.5px;
+        font-weight: 500;
+        transition: color 0.2s;
+      }
+      .nav-links a:hover {
+        color: var(--gold2);
+      }
+
+      /* MOBILE HAMBURGER MENU */
+      .nav-burger {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 8px;
+        margin-left: 8px;
+      }
+      .nav-burger span {
+        display: block;
+        width: 22px;
+        height: 2px;
+        background: var(--gold);
+        border-radius: 2px;
+        transition:
+          transform 0.3s ease,
+          opacity 0.3s ease;
+      }
+      .nav-burger[aria-expanded="true"] span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+      .nav-burger[aria-expanded="true"] span:nth-child(2) {
+        opacity: 0;
+      }
+      .nav-burger[aria-expanded="true"] span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+      @media (max-width: 700px) {
+        .nav-links {
+          display: flex;
+          flex-direction: column;
+          gap: 0;
+          position: absolute;
+          top: 64px;
+          left: 0;
+          right: 0;
+          background: var(--purpleDark);
+          backdrop-filter: blur(16px);
+          border-bottom: 1px solid rgba(228, 217, 255, 0.2);
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.35s ease;
+        }
+        .nav-links.nav-open {
+          max-height: 400px;
+        }
+        .nav-links li {
+          width: 100%;
+        }
+        .nav-links a {
+          display: block;
+          padding: 16px 24px;
+          font-size: 15px;
+          border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .nav-burger {
+          display: flex;
+        }
+      }
+
+      /* HERO / BANNER */
+      .hero {
+        position: relative;
+        overflow: hidden;
+        background: var(--purple);
+        width: 100%;
+      }
+      .hero-banner {
+        width: 100%;
+        max-height: 420px;
+        object-fit: cover;
+        object-position: 100% center;
+        display: block;
+      }
+      .hero-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(90deg, rgba(124,95,189,0.88) 0%, rgba(124,95,189,0.65) 40%, rgba(155,135,196,0.12) 75%, transparent 100%);
+        display: flex;
+        align-items: flex-end;
+        padding: 0 60px 32px;
+      }
+      .hero-text {
+        max-width: 520px;
+        padding-top: 56px;
+      }
+      @media (max-width: 700px) {
+        .hero-overlay {
+          padding: 0 20px 20px;
+          background: rgba(124, 95, 189, 0.78);
+        }
+        .hero-text {
+          padding-top: 50px;
+          max-width: 100%;
+        }
+        .hero-banner {
+          max-height: 280px;
+        }
+        .hero-text h1 {
+          font-size: 38px;
+        }
+      }
+      .hero-text h1 {
+        font-family: "Dancing Script", cursive;
+        font-size: clamp(32px, 5vw, 58px);
+        color: var(--white);
+        font-weight: 700;
+        line-height: 1.1;
+        margin-bottom: 6px;
+        text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+      }
+      .hero-text .tagline {
+        font-size: clamp(13px, 2vw, 18px);
+        color: rgba(255, 255, 255, 0.92);
+        margin-bottom: 10px;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      }
+      .hero-text .sub {
+        font-size: clamp(11px, 1.5vw, 14px);
+        color: var(--gold2);
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 14px;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      }
+      .hero-services-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: rgba(228, 217, 255, 0.2);
+        border: 1px solid rgba(228, 217, 255, 0.5);
+        color: var(--gold2);
+        font-size: 12px;
+        font-weight: 700;
+        padding: 5px 14px;
+        border-radius: 50px;
+        margin-bottom: 16px;
+      }
+      .hero-cta {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .btn,
+      .cta-btn,
+      .prod-btn,
+      .aud-tab,
+      .cred-cta a,
+      .pf-dot,
+      .chat-fab {
+        transition:
+          transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+          box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+          background 0.2s ease,
+          border-color 0.2s ease,
+          opacity 0.2s ease;
+      }
+      .btn:active,
+      .cta-btn:active,
+      .prod-btn:active,
+      .aud-tab:active,
+      .cred-cta a:active {
+        transform: scale(0.96);
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 11px 22px;
+        border-radius: 50px;
+        font-size: 13.5px;
+        font-weight: 600;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .btn-gold {
+        background: var(--grad2);
+        color: #3D2E5C;
+        box-shadow: 0 4px 18px rgba(201, 184, 240, 0.5);
+      }
+      .btn-gold:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(201, 184, 240, 0.6);
+      }
+      .btn-outline {
+        border: 2px solid rgba(255, 255, 255, 0.6);
+        color: #fff;
+      }
+      .btn-outline:hover {
+        background: rgba(255, 255, 255, 0.15);
+        border-color: #fff;
+      }
+      .btn-purple {
+        background: var(--grad3);
+        color: #fff;
+        box-shadow: 0 4px 18px rgba(78, 58, 130, 0.3);
+      }
+      .btn-purple:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(78, 58, 130, 0.4);
+      }
+
+      /* PORTFOLIO */
+      .portfolio-section {
+        padding: 80px 0;
+        background: var(--bg);
+      }
+      .pf-carousel {
+        height: 300px;
+        position: relative;
+        max-width: 420px;
+        width: 420px;
+        margin: 44px auto 0;
+        aspect-ratio: 4/5;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 20px 50px rgba(124, 95, 189, 0.22);
+        background: linear-gradient(135deg, #F3EDFF, #FDF8FF);
+        transition:
+          width 0.4s ease,
+          aspect-ratio 0.4s ease;
+      }
+      .pf-card {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transform: translateX(60px) scale(0.94);
+        transition:
+          opacity 0.6s cubic-bezier(0.2, 0.8, 0.2, 1),
+          transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+        pointer-events: none;
+        background: transparent;
+      }
+      .pf-card.active {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+        pointer-events: auto;
+        z-index: 2;
+      }
+      .pf-card.prev {
+        opacity: 0;
+        transform: translateX(-60px) scale(0.94);
+      }
+      .pf-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .pf-tag {
+        position: absolute;
+        top: 16px;
+        left: 16px;
+        background: rgba(78, 58, 130, 0.75);
+        backdrop-filter: blur(4px);
+        color: #fff;
+        font-size: 11.5px;
+        font-weight: 600;
+        padding: 6px 14px;
+        border-radius: 50px;
+        letter-spacing: 0.3px;
+        z-index: 3;
+      }
+      .pf-dots {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 20px;
+      }
+      .pf-dot {
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        background: var(--card-border);
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        transition: all 0.25s;
+      }
+      .pf-dot.active {
+        background: var(--violet);
+        width: 24px;
+        border-radius: 6px;
+      }
+      @media (max-width: 480px) {
+        .pf-carousel {
+          max-width: 88vw;
+        }
+      }
+      .pf-note {
+        text-align: center;
+        max-width: 560px;
+        margin: 44px auto 0;
+      }
+      .pf-note p {
+        color: var(--dim);
+        font-size: 13.5px;
+        line-height: 1.7;
+        margin-bottom: 20px;
+      }
+
+      /* WRAP */
+      .wrap {
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 0 64px;
+      }
+      @media (max-width: 700px) {
+        .wrap {
+          padding: 0 32px;
+        }
+      }
+
+      /* SECTION */
+      section {
+        padding: 70px 0;
+        position: relative;
+        z-index: 1;
+      }
+      .sec-label {
+        font-size: 11px;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        color: var(--violet);
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+      .sec-head {
+        margin-bottom: 44px;
+      }
+      .sec-head h2 {
+        font-size: clamp(24px, 3.5vw, 36px);
+        color: var(--purple);
+      }
+      .sec-head h2 span {
+        color: var(--violet);
+      }
+      .sec-head p {
+        color: var(--dim);
+        margin-top: 10px;
+        font-size: 15px;
+        max-width: 560px;
+      }
+
+      /* PROFILE SECTION */
+      .profile-section {
+        background: var(--white);
+      }
+      html[data-theme="dark"] .profile-section {
+        background: linear-gradient(360deg, var(--bg), #2E2150);
+      }
+      .profile-inner {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 40px;
+        align-items: center;
+      }
+      @media (max-width: 700px) {
+        .profile-inner {
+          grid-template-columns: 1fr;
+          text-align: center;
+          gap: 24px;
+        }
+      }
+      .profile-img {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        border: 4px solid var(--gold);
+        box-shadow:
+          0 0 0 8px rgba(201, 184, 240, 0.28),
+          0 20px 50px rgba(124, 95, 189, 0.25);
+        object-fit: cover;
+      }
+
+      /* WATERMARK PROTECTION */
+      .img-protect {
+        position: relative;
+        display: inline-block;
+      }
+      .img-protect.circle .wm-badge {
+        bottom: 6px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .wm-badge {
+        position: absolute;
+        bottom: 14px;
+        right: 14px;
+        font-family: "Poppins", sans-serif;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.4px;
+        color: #fff;
+        background: rgba(78, 58, 130, 0.65);
+        backdrop-filter: blur(3px);
+        padding: 5px 13px;
+        border-radius: 20px;
+        pointer-events: none;
+        white-space: nowrap;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        z-index: 3;
+      }
+
+      /* CREDENTIALS / TRUST SECTION */
+      .cred-section {
+        padding: 34px 0 40px;
+        background: var(--white);
+      }
+      html[data-theme="dark"] .cred-section {
+        background: linear-gradient(180deg, var(--bg), #2E2150);
+      }
+      .cred-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: rgba(124, 95, 189, 0.1);
+        color: var(--purple);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        padding: 5px 14px;
+        border-radius: 50px;
+        margin-bottom: 10px;
+      }
+      html[data-theme="dark"] .cred-badge {
+        background: rgba(228, 217, 255, 0.12);
+        color: var(--gold2);
+      }
+      .cred-title {
+        font-family: "Poppins";
+        font-size: clamp(19px, 2.6vw, 25px);
+        font-weight: 800;
+        color: var(--purple);
+        margin-bottom: 6px;
+      }
+      html[data-theme="dark"] .cred-title {
+        color: var(--gold2);
+      }
+      .cred-sub {
+        font-family: "Poppins";
+        font-size: 13px;
+        color: var(--dim);
+        max-width: 520px;
+        margin: 0 auto 22px;
+        line-height: 1.6;
+      }
+      .cred-stats {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        max-width: 800px;
+        margin: 0 auto 20px;
+      }
+      @media (max-width: 600px) {
+        .cred-stats {
+          grid-template-columns: repeat(4, 1fr);
+          gap: 6px;
+        }
+      }
+      .cred-stat {
+        background: var(--light);
+        border: 1px solid var(--card-border);
+        border-radius: 12px;
+        padding: 10px 4px;
+        text-align: center;
+        box-shadow: 0 3px 10px rgba(124, 95, 189, 0.06);
+      }
+      html[data-theme="dark"] .cred-stat {
+        background: var(--card-bg);
+      }
+      .cred-stat .n {
+        font-family: "Poppins";
+        font-size: 19px;
+        font-weight: 800;
+        color: var(--violet);
+      }
+      .cred-stat .l {
+        font-size: 9px;
+        color: var(--dim);
+        font-weight: 600;
+        margin-top: 1px;
+      }
+      .cred-list {
+        max-width: 800px;
+        margin: 0 auto 18px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+      @media (max-width: 600px) {
+        .cred-list {
+          grid-template-columns: 1fr;
+        }
+      }
+      .cred-item {
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+        background: var(--light);
+        border: 1px solid var(--card-border);
+        border-radius: 12px;
+        padding: 11px 13px;
+      }
+      html[data-theme="dark"] .cred-item {
+        background: var(--card-bg);
+      }
+      .cred-item svg {
+        width: 18px;
+        height: 18px;
+        stroke: var(--violet);
+        fill: none;
+        stroke-width: 1.8;
+        flex-shrink: 0;
+        margin-top: 1px;
+      }
+      .cred-item h4 {
+        font-family: "Poppins";
+        font-size: 12.5px;
+        font-weight: 700;
+        color: var(--purple);
+        margin-bottom: 1px;
+      }
+      html[data-theme="dark"] .cred-item h4 {
+        color: var(--gold2);
+      }
+      .cred-item p {
+        font-size: 11px;
+        color: var(--dim);
+        line-height: 1.4;
+      }
+      .cred-cta {
+        text-align: center;
+      }
+      .cred-cta a {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        background: var(--grad3);
+        color: #fff;
+        font-family: "Poppins";
+        font-weight: 600;
+        font-size: 14px;
+        padding: 12px 24px;
+        border-radius: 50px;
+        text-decoration: none;
+        box-shadow: 0 6px 16px rgba(78, 58, 130, 0.22);
+        transition: transform 0.25s;
+      }
+      .cred-cta a:hover {
+        transform: translateY(-2px);
+      }
+      .profile-text h2 {
+        font-size: 36px;
+        color: var(--purple);
+        margin-bottom: 6px;
+      }
+      .profile-text .role {
+        font-size: 15px;
+        color: var(--dim);
+        margin-bottom: 14px;
+      }
+      .profile-text p {
+        font-size: 14.5px;
+        color: var(--dim);
+        line-height: 1.8;
+        max-width: 560px;
+      }
+      html[data-theme="dark"] .profile-text p {
+        color: var(--dim);
+      }
+      .profile-stats {
+        display: flex;
+        gap: 28px;
+        margin-top: 20px;
+        flex-wrap: wrap;
+      }
+      @media (max-width: 700px) {
+        .profile-stats {
+          justify-content: center;
+        }
+      }
+      .pstat .n {
+        font-size: 26px;
+        font-weight: 700;
+        color: var(--purple);
+      }
+      .pstat .l {
+        font-size: 10px;
+        color: var(--purple);
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+      }
+
+      /* SERVICES */
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+      }
+      @media (max-width: 900px) {
+        .services-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 500px) {
+        .services-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* AUDIENCE FILTER TABS */
+      .aud-tabs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+        margin: 36px 0 34px;
+      }
+      .aud-tab {
+        font-family: "Poppins";
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--purple);
+        background: var(--white);
+        border: 1.5px solid rgba(139, 111, 201, 0.3);
+        padding: 9px 20px;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 0.28s cubic-bezier(0.2, 0.8, 0.3, 1);
+        white-space: nowrap;
+      }
+      .aud-tab:hover {
+        border-color: var(--violet);
+        transform: translateY(-2px);
+      }
+      .aud-tab.active {
+        background: var(--grad3);
+        color: #fff;
+        border-color: transparent;
+        box-shadow: 0 8px 20px rgba(78, 58, 130, 0.3);
+      }
+      html[data-theme="dark"] .aud-tab {
+        background: var(--card-bg);
+        color: var(--gold2);
+        border-color: rgba(228, 217, 255, 0.25);
+      }
+      html[data-theme="dark"] .aud-tab.active {
+        background: var(--grad3);
+        color: #fff;
+      }
+      .svc-card {
+        transition:
+          opacity 0.4s ease,
+          transform 0.4s cubic-bezier(0.2, 0.8, 0.3, 1),
+          max-height 0.4s ease,
+          margin 0.4s ease,
+          padding 0.4s ease,
+          border 0.4s ease;
+      }
+      .svc-card.svc-hide {
+        opacity: 0;
+        transform: scale(0.85) translateY(10px);
+        pointer-events: none;
+        position: absolute;
+        visibility: hidden;
+      }
+      .svc-card.svc-show {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+        position: relative;
+        visibility: visible;
+      }
+
+      .svc-card {
+        background: var(--white);
+        border-radius: 20px;
+        padding: 24px 20px;
+        text-align: center;
+        border: 1px solid rgba(139, 111, 201, 0.18);
+        box-shadow: 0 4px 20px rgba(124, 95, 189, 0.08);
+        transition: all 0.3s;
+        position: relative;
+        overflow: hidden;
+      }
+      .svc-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 20px;
+        padding: 1.5px;
+        background: linear-gradient(135deg, var(--violet), var(--gold));
+        -webkit-mask:
+          linear-gradient(#000 0 0) content-box,
+          linear-gradient(#000 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        opacity: 0;
+        transition: opacity 0.3s;
+        pointer-events: none;
+      }
+      .svc-card:hover {
+        transform: translateY(-8px) scale(1.015);
+        box-shadow: 0 16px 36px rgba(124, 95, 189, 0.22);
+        border-color: rgba(139, 111, 201, 0.45);
+        transition:
+          transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+          box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+          border-color 0.35s ease;
+      }
+      .svc-icon {
+        transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .svc-card:hover .svc-icon {
+        transform: scale(1.08) rotate(-3deg);
+      }
+      .svc-card:hover::before {
+        opacity: 1;
+      }
+      .svc-icon {
+        width: 56px;
+        height: 56px;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 16px;
+        background: linear-gradient(135deg, var(--purple), var(--violet));
+        box-shadow: 0 6px 16px rgba(78, 58, 130, 0.25);
+      }
+      .svc-icon svg {
+        width: 26px;
+        height: 26px;
+        stroke: #fff;
+        fill: none;
+        stroke-width: 1.7;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .svc-card h3 {
+        font-size: 15px;
+        font-weight: 600;
+        color: var(--purple);
+        margin-bottom: 8px;
+      }
+      .svc-card p {
+        font-size: 12.5px;
+        color: var(--dim);
+        line-height: 1.6;
+      }
+      .svc-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        justify-content: center;
+        margin-top: 12px;
+      }
+      .svc-tag {
+        font-size: 10.5px;
+        font-weight: 600;
+        color: var(--violet);
+        background: rgba(139, 111, 201, 0.09);
+        border: 1px solid rgba(139, 111, 201, 0.22);
+        padding: 4px 10px;
+        border-radius: 50px;
+        letter-spacing: 0.2px;
+      }
+      html[data-theme="dark"] .svc-tag {
+        color: var(--gold2);
+        background: rgba(228, 217, 255, 0.1);
+        border-color: rgba(228, 217, 255, 0.25);
+      }
+
+      .ic1 {
+        background: linear-gradient(135deg, #EDE4FF, #D8CCFF);
+      }
+      .ic2 {
+        background: linear-gradient(135deg, #F5F0FF, #E4D9FF);
+      }
+      .ic3 {
+        background: linear-gradient(135deg, #F0E6FF, #DCC9F5);
+      }
+      .ic4 {
+        background: linear-gradient(135deg, #E8DEFA, #CBB6EC);
+      }
+      .ic5 {
+        background: linear-gradient(135deg, #EFE9FB, #D3C4EE);
+      }
+      .ic6 {
+        background: linear-gradient(135deg, #F6F1FF, #E0D0FA);
+      }
+      .ic7 {
+        background: linear-gradient(135deg, #F3E8FF, #E9D5FF);
+      }
+      .ic8 {
+        background: linear-gradient(135deg, #EAE0FA, #D6C3EF);
+      }
+
+      /* PRICING */
+
+      /* PRODUCTS */
+      .products-section {
+        background: var(--white);
+      }
+      .products-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+      @media (max-width: 850px) {
+        .products-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 500px) {
+        .products-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .prod-card {
+        background: var(--white);
+        border-radius: 20px;
+        overflow: hidden;
+        border: 1px solid rgba(139, 111, 201, 0.18);
+        box-shadow: 0 4px 16px rgba(124, 95, 189, 0.07);
+        transition: all 0.3s;
+      }
+      .prod-card:hover {
+        transform: translateY(-8px) scale(1.015);
+        box-shadow: 0 18px 36px rgba(124, 95, 189, 0.2);
+        transition:
+          transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+          box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      html[data-theme="dark"] .prod-card {
+        background: var(--card-bg);
+      }
+      .prod-header {
+        padding: 24px;
+        background: var(--grad3);
+        text-align: center;
+      }
+      .prod-emoji {
+        width: 40px;
+        height: 40px;
+        margin: 0 auto 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .prod-emoji svg {
+        width: 26px;
+        height: 26px;
+        stroke: #fff;
+        fill: none;
+        stroke-width: 1.7;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .prod-header h3 {
+        color: #fff;
+        font-size: 16px;
+        font-weight: 600;
+      }
+      .prod-body {
+        padding: 18px 20px;
+      }
+      .prod-body p {
+        font-size: 13px;
+        color: var(--dim);
+        margin-bottom: 14px;
+        line-height: 1.6;
+      }
+      .prod-price {
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--purple);
+        margin-bottom: 14px;
+      }
+      .prod-price span {
+        font-size: 13px;
+        font-weight: 400;
+        color: var(--dim);
+      }
+      .prod-btn {
+        display: block;
+        text-align: center;
+        background: var(--grad3);
+        color: #fff;
+        padding: 10px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-size: 13.5px;
+        font-weight: 600;
+        transition: all 0.25s;
+      }
+      .prod-btn:hover {
+        opacity: 0.9;
+        transform: translateY(-1px);
+      }
+
+      /* PLATFORMS */
+      .platforms-section {
+        background: var(--white);
+      }
+      html[data-theme="dark"] .platforms-section {
+        background: #2E2150;
+      }
+      .platforms-section .sec-head h2 {
+        color: var(--purple);
+      }
+      .platforms-section .sec-head p {
+        color: var(--purple);
+      }
+      .platforms-section .sec-label {
+        color: var(--violet);
+      }
+      .platforms-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+      }
+      @media (max-width: 850px) {
+        .platforms-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+      @media (max-width: 500px) {
+        .platforms-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      .platform-card {
+        background: var(--white);
+        border: 1px solid var(--violet);
+        border-radius: 16px;
+        padding: 20px 14px;
+        text-align: center;
+        text-decoration: none;
+        transition: all 0.3s;
+      }
+      html[data-theme="dark"] .platform-card {
+        background: var(--card-bg);
+      }
+      html[data-theme="dark"] .platform-card:hover {
+        background: linear-gradient(135deg, #4E3A82, #362852);
+      }
+      .platform-card:hover {
+        background: var(--grad3);
+        transform: translateY(-6px) scale(1.03);
+        border: 1px solid var(--white);
+        transition:
+          transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+          background 0.35s ease,
+          border-color 0.35s ease;
+      }
+      .platform-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 10px;
+      }
+      .platform-icon svg {
+        width: 30px;
+        height: 30px;
+        stroke: var(--violet);
+        fill: none;
+        stroke-width: 1.6;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .platform-card:hover svg {
+        stroke: var(--white);
+      }
+
+      .platform-name {
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--violet);
+
+        margin-bottom: 3px;
+      }
+
+      .platform-card:hover .platform-name {
+        color: var(--white);
+      }
+
+      .platform-desc {
+        font-size: 10.5px;
+        color: var(--violet);
+      }
+
+      .platform-card:hover .platform-desc {
+        color: var(--white);
+      }
+
+      /* TESTIMONIAL / WHY */
+      .why-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+      @media (max-width: 700px) {
+        .why-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .why-card {
+        background: var(--white);
+        border-radius: 20px;
+        padding: 28px 22px;
+        border-left: 4px solid var(--violet);
+        box-shadow: 0 4px 16px rgba(124, 95, 189, 0.07);
+      }
+      html[data-theme="dark"] .why-card {
+        background: var(--card-bg);
+      }
+      .why-icon {
+        width: 52px;
+        height: 52px;
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 14px;
+        background: linear-gradient(135deg, var(--gold), var(--violet));
+        box-shadow: 0 6px 16px rgba(139, 111, 201, 0.3);
+      }
+      .why-icon svg {
+        width: 24px;
+        height: 24px;
+        stroke: #fff;
+        fill: none;
+        stroke-width: 1.8;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .why-card h3 {
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--purple);
+        margin-bottom: 8px;
+      }
+      .why-card p {
+        font-size: 13.5px;
+        color: var(--dim);
+        line-height: 1.7;
+      }
+
+      /* CONTACT CTA */
+      .cta-section {
+        text-align: center;
+        padding: 80px 0;
+      }
+      .cta-section h2 {
+        font-size: clamp(30px, 5vw, 52px);
+        color: var(--purple);
+        margin-bottom: 14px;
+      }
+      .cta-section p {
+        color: var(--purple);
+        font-size: 16px;
+        max-width: 500px;
+        margin: 0 auto 34px;
+      }
+      .cta-btns {
+        display: flex;
+        gap: 14px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .cta-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        padding: 13px 24px;
+        border-radius: 50px;
+        font-size: 14px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.25s;
+        border: 2px solid transparent;
+      }
+      .cb-wa {
+        background: #25d366;
+        color: #fff;
+        box-shadow: 0 4px 18px rgba(37, 211, 102, 0.4);
+      }
+      .cb-wa:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(37, 211, 102, 0.5);
+      }
+      .cb-ig {
+        background: linear-gradient(135deg, #e1306c, #f56040, #ffdc80);
+        color: #fff;
+      }
+      .cb-ig:hover {
+        transform: translateY(-2px);
+        opacity: 0.9;
+      }
+      .cb-fb {
+        background: #1877f2;
+        color: #fff;
+      }
+      .cb-fb:hover {
+        transform: translateY(-2px);
+        opacity: 0.9;
+      }
+      .cb-gm {
+        background: var(--grad3);
+        color: #fff;
+      }
+      .cb-gm:hover {
+        transform: translateY(-2px);
+        opacity: 0.9;
+      }
+      .cb-et {
+        background: #f56400;
+        color: #fff;
+      }
+      .cb-et:hover {
+        transform: translateY(-2px);
+        opacity: 0.9;
+      }
+      .cb-em {
+        background: var(--grad3);
+        color: #fff;
+        border-color: transparent;
+      }
+      .cb-em:hover {
+        opacity: 0.9;
+        transform: translateY(-2px);
+      }
+
+      footer {
+        background: linear-gradient(135deg, var(--purple2), var(--purpleDark));
+        color: var(--white);
+        text-align: center;
+        padding: 24px;
+        font-size: 13px;
+      }
+      footer a {
+        color: var(--white);
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="scroll-progress" id="scrollProgress"></div>
+    <div class="blob1"></div>
+    <div class="blob2"></div>
+
+    <!-- NAV -->
+    <nav>
+      <div class="wrap">
+        <a href="#" class="nav-logo">
+          <img src="images/img3.jpg" alt="AI Wali Madam" />
+          <span>AiwaliMadam</span>
+        </a>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#platforms">Platforms</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div style="display: flex; align-items: center">
+          <button
+            class="theme-toggle"
+            id="themeToggle"
+            aria-label="Toggle dark and light mode"
+          >
+            <span class="sun">☀️</span><span class="moon">🌙</span>
+          </button>
+          <button
+            class="nav-burger"
+            id="navBurger"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="navLinks"
+          >
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+     <!-- HERO BANNER --> 
+     <div class="hero">
+      <div class="img-protect" style="display:block;">
+          <img class="hero-banner" src="images/img4.jpg" alt="AI Wali Madam Banner"> 
+          <span class="wm-badge" style="bottom:auto;top:16px;">AiwaliMadam ✨</span> 
+      </div>
+      <div class="hero-overlay">
+        <div class="hero-text">
+          <div class="sub">✨ AI-Powered Solutions</div>
+          <h1>AiwaliMadam</h1>
+          <div class="tagline">Where AI Meets Excellence</div>
+          <div class="hero-rotator" aria-hidden="true">
+            <ul>
+              <li>🎨 Canva Design &amp; Pinterest Pins</li>
+              <li>🎬 Video Editing &amp; YouTube Thumbnails</li>
+              <li>🤖 AI Tools &amp; Automation</li>
+              <li>🎓 Academic &amp; Research Support</li>
+              <li>📱 Social Media Management</li>
+              <li>🚀 Any Digital or AI Work, Done Right</li>
+            </ul>
+          </div>
+          <div class="hero-cta">
+            <a href="#products" class="btn btn-gold">🛍️ Shop Products</a>
+            <a href="#contact" class="btn btn-outline">💬 Get in Touch</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROFILE -->
+    <section class="profile-section reveal">
+      <div class="wrap">
+        <div
+          class="profile-inner reveal"
+          data-aos="zoom-in"
+          data-aos-duration="1000"
+          data-aos-easing="ease-out-cubic"
+          data-aos-delay="200"
+          data-aos-offset="80"
+        >
+          <div class="img-protect circle">
+            <img
+              class="profile-img"
+              src="images/img5.jpg"
+              alt="AI Wali Madam"
+            />
+          </div>
+          <div class="profile-text">
+            <h2>AI Wali Madam</h2>
+            <div class="role">
+              AI Educator · Digital Entrepreneur · Content Creator
+            </div>
+            <p>
+              Smart AI tools, templates, and prompts for your productivity and
+              success. Ready-to-use digital solutions for students, freelancers,
+              and businesses. Smart Work. Real Results.
+            </p>
+            <div class="profile-stats">
+              <div class="pstat">
+                <div class="n">9K+</div>
+                <div class="l">YouTube Subs</div>
+              </div>
+              <div class="pstat">
+                <div class="n">10+</div>
+                <div class="l">Services</div>
+              </div>
+              <div class="pstat">
+                <div class="n">5+</div>
+                <div class="l">Platforms</div>
+              </div>
+              <div class="pstat">
+                <div class="n">100%</div>
+                <div class="l">Digital</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CREDENTIALS / TRUST -->
+    <section class="cred-section reveal">
+      <div
+        class="wrap"
+        style="text-align: center"
+        data-aos="zoom-out"
+        data-aos-duration="1000"
+        data-aos-easing="ease-out-cubic"
+        data-aos-delay="700"
+        data-aos-offset="80"
+      >
+        <div class="cred-badge">✔ Verified Credentials</div>
+        <h2 class="cred-title">Real Expertise Behind Every Tool</h2>
+        <p class="cred-sub">
+          MS Computer Science, PhD candidate, 10+ years teaching. Every design
+          and prompt is built by someone who understands both the tech and the
+          classroom.
+        </p>
+
+        <div class="cred-stats">
+          <div class="cred-stat">
+            <div class="n">10+</div>
+            <div class="l">Yrs Teaching</div>
+          </div>
+          <div class="cred-stat">
+            <div class="n">5</div>
+            <div class="l">Publications</div>
+          </div>
+          <div class="cred-stat">
+            <div class="n">15+</div>
+            <div class="l">FYPs</div>
+          </div>
+          <div class="cred-stat">
+            <div class="n">8</div>
+            <div class="l">Certs</div>
+          </div>
+        </div>
+
+        <div class="cred-list">
+          <div class="cred-item">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 3l9 4.5-9 4.5-9-4.5z" />
+              <path
+                d="M6 10.2v5.3c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5v-5.3M21 8v6"
+              />
+            </svg>
+            <div>
+              <h4>MS Computer Science</h4>
+              <p>
+                Riphah International University, AI &amp; HCI specialization.
+              </p>
+            </div>
+          </div>
+          <div class="cred-item">
+            <svg viewBox="0 0 24 24">
+              <rect x="3" y="7" width="18" height="13" rx="2" />
+              <path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2" />
+            </svg>
+            <div>
+              <h4>Lecturer, RLKU Lahore</h4>
+              <p>
+                Departmental Coordinator, teaching AI &amp; Software
+                Engineering.
+              </p>
+            </div>
+          </div>
+          <div class="cred-item">
+            <svg viewBox="0 0 24 24">
+              <path d="M4 4h13l3 3v13H4z" />
+              <path d="M8 9h8M8 13h8M8 17h5" />
+            </svg>
+            <div>
+              <h4>PhD Candidate</h4>
+              <p>HCI &amp; AI in Education, 5 peer-reviewed publications.</p>
+            </div>
+          </div>
+          <div class="cred-item">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4z"
+              />
+            </svg>
+            <div>
+              <h4>Best Teacher Award</h4>
+              <p>PIASS 2022, plus Google, Cisco &amp; IEEE certifications.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="cred-cta">
+          <a
+            href="https://rabiaabbas-del.github.io/"
+            target="_blank"
+            rel="noopener"
+            >View Full Academic Portfolio &rarr;</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+      <div
+        class="wrap"
+        data-aos="zoom-out"
+        data-aos-duration="1000"
+        data-aos-easing="ease-out-cubic"
+        data-aos-delay="200"
+        data-aos-offset="80"
+      >
+        <div class="sec-head">
+          <div class="sec-label">What We Offer</div>
+          <h2>Our <span>Services</span></h2>
+          <p>
+            From students to businesses, AI-powered solutions available for
+            everyone.
+          </p>
+        </div>
+        <div class="aud-tabs" id="audTabs">
+          <button class="aud-tab active" data-aud="all">Everyone</button>
+          <button class="aud-tab" data-aud="teachers">For Teachers</button>
+          <button class="aud-tab" data-aud="students">For Students</button>
+          <button class="aud-tab" data-aud="creators">
+            For Content Creators
+          </button>
+          <button class="aud-tab" data-aud="business">For Businesses</button>
+          <button class="aud-tab" data-aud="professionals">
+            For Professionals
+          </button>
+        </div>
+        <div class="services-grid" id="svcGrid">
+          <div class="svc-card reveal" data-aud="creators students business">
+            <div class="svc-icon">
+              <svg viewBox="0 0 24 24">
+                <rect x="3" y="3" width="7" height="7" rx="1.5" />
+                <rect x="14" y="3" width="7" height="7" rx="1.5" />
+                <rect x="3" y="14" width="7" height="7" rx="1.5" />
+                <circle cx="17.5" cy="17.5" r="3.5" />
+              </svg>
+            </div>
+            <h3>Canva Design (By Me)</h3>
+            <p>
+              I hand-create every design myself in Canva, including social
+              posts, Pinterest pins, flyers, and brand kits, all fully
+              customized to your needs.
+            </p>
+          </div>
+          <div class="svc-card reveal d1" data-aud="creators">
+            <div class="svc-icon">
+              <svg viewBox="0 0 24 24">
+                <rect x="2.5" y="5" width="14" height="14" rx="2" />
+                <path d="M16.5 9.5l5-3v11l-5-3" />
+              </svg>
+            </div>
+            <h3>Video Editing & Thumbnails</h3>
+            <p>
+              Just like I create and edit videos for my own YouTube channel,
+              I'll do the same for you: reels, shorts, YouTube thumbnails, all
+              of it.
+            </p>
+          </div>
+          <div class="svc-card reveal" data-aud="business professionals">
+            <div class="svc-icon">
+              <svg viewBox="0 0 24 24">
+                <rect x="7" y="7" width="10" height="10" rx="1.5" />
+                <path
+                  d="M7 3v3M12 3v3M17 3v3M7 18v3M12 18v3M17 18v3M3 7h3M3 12h3M3 17h3M18 7h3M18 12h3M18 17h3"
+                />
+              </svg>
+            </div>
+            <h3>AI Tools & Automation</h3>
+            <p>
+              Smart AI tools that make your work 10x faster by automating
+              repetitive tasks.
+            </p>
+          </div>
+          <div class="svc-card reveal d1" data-aud="teachers students">
+            <div class="svc-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M4 4h13l3 3v13H4z" />
+                <path d="M8 9h8M8 13h8M8 17h5" />
+              </svg>
+            </div>
+            <h3>Ready-made AI Prompts</h3>
+            <p>
+              Professional prompts that get the best results from ChatGPT,
+              available for every field.
+            </p>
+          </div>
+          <div class="svc-card reveal d2" data-aud="students professionals">
+            <div class="svc-icon">
+              <svg viewBox="0 0 24 24">
+                <rect x="5" y="3" width="14" height="18" rx="1.5" />
+                <path d="M9 8h6M9 12h6M9 16h3" />
+              </svg>
+            </div>
+            <h3>CV & Presentation Templates</h3>
+            <p>
+              Job-winning CVs, stunning presentations, and professional reports,
+              ready to use.
+            </p>
+          </div>
+          <div class="svc-card reveal d3" data-aud="students">
+            <div class="svc-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 3l9 4.5-9 4.5-9-4.5z" />
+                <path
+                  d="M6 10.2v5.3c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5v-5.3M21 8v6"
+                />
+              </svg>
+            </div>
+            <h3>Academic Support</h3>
+            <p>
+              Assignments, research help, and academic writing, complete support
+              for students.
+            </p>
+          </div>
+          <div class="svc-card reveal" data-aud="business professionals">
+            <div class="svc-icon">
+              <svg viewBox="0 0 24 24">
+                <rect x="3" y="7" width="18" height="13" rx="2" />
+                <path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2" />
+              </svg>
+            </div>
+            <h3>Freelance Services</h3>
+            <p>
+              Professional digital services: content writing, AI solutions, and
+              business tools.
+            </p>
+          </div>
+          <div class="svc-card reveal d1" data-aud="business creators">
+            <div class="svc-icon">
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M8 12a4 4 0 118 0M12 15v3" />
+              </svg>
+            </div>
+            <h3>Social Media Management</h3>
+            <p>
+              AI-powered social media strategy and content that accelerates your
+              growth.
+            </p>
+          </div>
+          <div class="svc-card reveal d2" data-aud="professionals business">
+            <div class="svc-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M13 2L4 14h6l-1 8 9-12h-6z" />
+              </svg>
+            </div>
+            <h3>Digital Productivity Solutions</h3>
+            <p>
+              Workflows, systems, and tools that boost your daily productivity.
+            </p>
+          </div>
+          <div
+            class="svc-card reveal d3"
+            data-aud="teachers students professionals"
+          >
+            <div class="svc-icon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M4 19V5a2 2 0 012-2h9l5 5v11a2 2 0 01-2 2H6a2 2 0 01-2-2z"
+                />
+                <path d="M9 12h6M9 16h6" />
+              </svg>
+            </div>
+            <h3>Education & AI Training</h3>
+            <p>
+              Learn AI tools with practical training for teachers, students, and
+              professionals.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio" class="portfolio-section">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <div class="sec-label">Our Work</div>
+          <h2>Sample <span>Portfolio</span></h2>
+          <p>
+            A look at the style and quality you can expect. Every piece designed
+            in-house, by me.
+          </p>
+        </div>
+        <div class="pf-carousel" id="pfCarousel">
+          <div class="pf-card reveal active" data-i="0">
+            <img
+              loading="lazy"
+              src="images/img6.jpg"
+              alt="Canva Instagram post design sample"
+            />
+            <div class="pf-tag">Canva Design</div>
+          </div>
+
+          <div class="pf-card reveal" data-i="1">
+            <img
+              loading="lazy"
+              src="images/img7.jpg"
+              alt="Pinterest pin design sample, toolkit promo"
+            />
+            <div class="pf-tag">Pinterest Pin</div>
+          </div>
+
+          <div class="pf-card reveal" data-i="2">
+            <img
+              loading="lazy"
+              src="images/img8.jpg"
+              alt="YouTube thumbnail design sample 1"
+            />
+            <div class="pf-tag">YouTube Thumbnail</div>
+          </div>
+
+          <div class="pf-card reveal" data-i="3">
+            <img
+              loading="lazy"
+              src="images/img9.jpg"
+              alt="Brand kit mockup sample with color palette and typography"
+            />
+            <div class="pf-tag">Brand Kit</div>
+          </div>
+
+          <div class="pf-card reveal" data-i="4">
+            <img
+              loading="lazy"
+              src="images/img10.jpg"
+              alt="Pinterest pin design sample, Canva tips"
+            />
+            <div class="pf-tag">Pinterest Pin</div>
+          </div>
+
+          <div class="pf-card reveal" data-i="5">
+            <img
+              loading="lazy"
+              src="images/img11.jpg"
+              alt="YouTube channel banner design sample"
+            />
+            <div class="pf-tag">Channel Banner</div>
+          </div>
+
+          <div class="pf-card reveal" data-i="6">
+            <img
+              loading="lazy"
+              src="images/img12.jpg"
+              alt="YouTube thumbnail design sample"
+            />
+            <div class="pf-tag">YouTube Thumbnail</div>
+          </div>
+
+          <div class="pf-card reveal" data-i="7">
+            <img
+              loading="lazy"
+              src="images/img13.jpg"
+              alt="YouTube thumbnail design sample 2"
+            />
+            <div class="pf-tag">YouTube Thumbnail</div>
+          </div>
+        </div>
+        <div class="pf-dots" id="pfDots"></div>
+        <div class="pf-note reveal">
+          <p>
+            These are concept samples showing design style, created to
+            demonstrate range across formats. Real client work follows the same
+            quality with your own brand and content.
+          </p>
+          <a
+            href="https://wa.me/923246610449"
+            class="btn btn-purple"
+            target="_blank"
+            >Discuss Your Project →</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing" class="pricing-section reveal">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <div class="sec-label">Launch Offer</div>
+          <h2>Beginner-Friendly <span>Pricing</span></h2>
+          <p>
+            New business, friend-like rates, and I design and edit everything
+            myself. First 10 clients get 30% off! 🎁
+          </p>
+        </div>
+        <div class="products-grid">
+          <div
+            class="prod-card reveal"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-easing="ease-out-cubic"
+            data-aos-delay="200"
+            data-aos-offset="80"
+          >
+            <div class="prod-header">
+              <span class="prod-emoji"
+                ><svg viewBox="0 0 24 24">
+                  <rect x="3" y="3" width="7" height="7" rx="1.5" />
+                  <rect x="14" y="3" width="7" height="7" rx="1.5" />
+                  <rect x="3" y="14" width="7" height="7" rx="1.5" />
+                  <circle cx="17.5" cy="17.5" r="3.5" /></svg
+              ></span>
+              <h3>Canva Design</h3>
+            </div>
+            <div class="prod-body">
+              <p>
+                Social post, Pinterest pin, flyer: from a single design to a
+                full bundle.
+              </p>
+              <div class="prod-price">$8–10 <span>/ design</span></div>
+              <p
+                style="font-size: 12px; color: var(--dim); margin-bottom: 14px"
+              >
+                Bundle: 5 designs $35 · Monthly (10): $60
+              </p>
+              <a
+                href="https://wa.me/923246610449?text=Hi!%20Mujhe%20Canva%20Design%20chahiye"
+                target="_blank"
+                class="prod-btn"
+                >Book on WhatsApp →</a
+              >
+            </div>
+          </div>
+          <div
+            class="prod-card reveal d1"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-easing="ease-out-cubic"
+            data-aos-delay="300"
+            data-aos-offset="80"
+          >
+            <div class="prod-header">
+              <span class="prod-emoji"
+                ><svg viewBox="0 0 24 24">
+                  <rect x="2.5" y="5" width="14" height="14" rx="2" />
+                  <path d="M16.5 9.5l5-3v11l-5-3" /></svg
+              ></span>
+              <h3>Video Editing</h3>
+            </div>
+            <div class="prod-body">
+              <p>
+                Reels, shorts, ya long-form, with professional editing and
+                timely delivery.
+              </p>
+              <div class="prod-price">$25–40 <span>/ video</span></div>
+              <p
+                style="font-size: 12px; color: var(--dim); margin-bottom: 14px"
+              >
+                Monthly (4 videos): $120
+              </p>
+              <a
+                href="https://wa.me/923246610449?text=Hi!%20Mujhe%20Video%20Editing%20chahiye"
+                target="_blank"
+                class="prod-btn"
+                >Book on WhatsApp →</a
+              >
+            </div>
+          </div>
+          <div
+            class="prod-card reveal d2"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-easing="ease-out-cubic"
+            data-aos-delay="400"
+            data-aos-offset="80"
+          >
+            <div class="prod-header">
+              <span class="prod-emoji"
+                ><svg viewBox="0 0 24 24">
+                  <rect x="3" y="3" width="18" height="18" rx="2" />
+                  <circle cx="8.5" cy="8.5" r="1.8" />
+                  <path d="M21 15l-5-5-11 11" /></svg
+              ></span>
+              <h3>YouTube Thumbnails</h3>
+            </div>
+            <div class="prod-body">
+              <p>
+                Eye-catching, click-worthy thumbnails, the same kind I create
+                for my own videos.
+              </p>
+              <div class="prod-price">$12–15 <span>/ thumbnail</span></div>
+              <p
+                style="font-size: 12px; color: var(--dim); margin-bottom: 14px"
+              >
+                Bundle: 5 thumbs $55
+              </p>
+              <a
+                href="https://wa.me/923246610449?text=Hi!%20Mujhe%20Thumbnail%20chahiye"
+                target="_blank"
+                class="prod-btn"
+                >Book on WhatsApp →</a
+              >
+            </div>
+          </div>
+          <div
+            class="prod-card reveal"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-easing="ease-out-cubic"
+            data-aos-delay="400"
+            data-aos-offset="80"
+          >
+            <div class="prod-header">
+              <span class="prod-emoji"
+                ><svg viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M8 12a4 4 0 118 0M12 15v3" /></svg
+              ></span>
+              <h3>Social Media Bundle</h3>
+            </div>
+            <div class="prod-body">
+              <p>
+                7 posts (design + caption) for a consistent, professional
+                presence.
+              </p>
+              <div class="prod-price">$45 <span>/ 7 posts</span></div>
+              <p
+                style="font-size: 12px; color: var(--dim); margin-bottom: 14px"
+              >
+                Monthly (20 posts): $100
+              </p>
+              <a
+                href="https://wa.me/923246610449?text=Hi!%20Mujhe%20Social%20Media%20Bundle%20chahiye"
+                target="_blank"
+                class="prod-btn"
+                >Book on WhatsApp →</a
+              >
+            </div>
+          </div>
+          <div
+            class="prod-card reveal d1"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-easing="ease-out-cubic"
+            data-aos-delay="500"
+            data-aos-offset="80"
+          >
+            <div class="prod-header">
+              <span class="prod-emoji"
+                ><svg viewBox="0 0 24 24">
+                  <rect x="5" y="3" width="14" height="18" rx="1.5" />
+                  <path d="M9 8h6M9 12h6M9 16h3" /></svg
+              ></span>
+              <h3>Custom Templates</h3>
+            </div>
+            <div class="prod-body">
+              <p>
+                CV, presentation, or brand template, reusable and professionally
+                designed.
+              </p>
+              <div class="prod-price">$30–35 <span>/ template</span></div>
+              <p
+                style="font-size: 12px; color: var(--dim); margin-bottom: 14px"
+              >
+                3 templates: $80
+              </p>
+              <a
+                href="https://wa.me/923246610449?text=Hi!%20I%20need%20a%20Custom%20Template"
+                target="_blank"
+                class="prod-btn"
+                >Book on WhatsApp →</a
+              >
+            </div>
+          </div>
+          <div
+            class="prod-card reveal d2"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-easing="ease-out-cubic"
+            data-aos-delay="600"
+            data-aos-offset="80"
+          >
+            <div class="prod-header">
+              <span class="prod-emoji"
+                ><svg viewBox="0 0 24 24">
+                  <path d="M13 2L4 14h6l-1 8 9-12h-6z" /></svg
+              ></span>
+              <h3>Any Kind of Work</h3>
+            </div>
+            <div class="prod-body">
+              <p>
+                Don't see it listed above? Just let me know, I handle all kinds
+                of digital and AI work.
+              </p>
+              <div class="prod-price">Custom <span>quote</span></div>
+              <p
+                style="font-size: 12px; color: var(--dim); margin-bottom: 14px"
+              >
+                Share details on WhatsApp
+              </p>
+              <a
+                href="https://wa.me/923246610449?text=Hi!%20I%20need%20a%20quote%20for%20a%20custom%20project"
+                target="_blank"
+                class="prod-btn"
+                >Book on WhatsApp →</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="why-grid" style="margin-top: 36px">
+          <div
+            class="why-card reveal"
+            data-aos="zoom-in"
+            data-aos-duration="1000"
+            data-aos-easing="ease-out-cubic"
+            data-aos-delay="200"
+            data-aos-offset="80"
+          >
+            <div class="why-icon">
+              <svg viewBox="0 0 24 24">
+                <rect x="3" y="8" width="18" height="13" rx="1.5" />
+                <path
+                  d="M3 8h18M12 8v13M7.5 8a2.5 2.5 0 010-5C10 3 12 8 12 8s2-5 4.5-5a2.5 2.5 0 010 5"
+                />
+              </svg>
+            </div>
+            <h3>Early Bird Discount</h3>
+            <p>First 10 clients get 30% off, just launching right now!</p>
+          </div>
+          <div
+            class="why-card reveal d1"
+            data-aos="zoom-in"
+            data-aos-duration="1000"
+            data-aos-easing="ease-out-cubic"
+            data-aos-delay="300"
+            data-aos-offset="80"
+          >
+            <div class="why-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M13 2L4 14h6l-1 8 9-12h-6z" />
+              </svg>
+            </div>
+            <h3>2–3 Day Delivery</h3>
+            <p>Fast turnaround, with rush delivery also available (+20%).</p>
+          </div>
+          <div
+            class="why-card reveal d2"
+            data-aos="zoom-in"
+            data-aos-duration="1000"
+            data-aos-easing="ease-out-cubic"
+            data-aos-delay="400"
+            data-aos-offset="80"
+          >
+            <div class="why-icon">
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M8 12l3 3 5-6" />
+              </svg>
+            </div>
+            <h3>100% Satisfaction</h3>
+            <p>
+              2 revisions included. I won't stop until you're happy with the
+              work.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section id="products" class="products-section">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <div class="sec-label">Digital Store</div>
+          <h2>Our <span>Products</span></h2>
+          <p>Buy once, use again and again: instant download, no waiting!</p>
+        </div>
+        <div class="products-grid">
+          <div
+            class="prod-card reveal"
+            data-aos="flip-left"
+            data-aos-duration="1000"
+            data-aos-easing="ease-out-cubic"
+            data-aos-delay="200"
+            data-aos-offset="80"
+          >
+            <div class="prod-header">
+              <span class="prod-emoji"
+                ><svg viewBox="0 0 24 24">
+                  <path d="M4 4h13l3 3v13H4z" />
+                  <path d="M8 9h8M8 13h8M8 17h5" /></svg
+              ></span>
+              <h3>AI Prompt Toolkit for Teachers</h3>
+            </div>
+            <div class="prod-body">
+              <p>
+                30 ready-to-use ChatGPT prompts for lesson planning, grading,
+                parent communication, and more.
+              </p>
+              <div class="prod-price">$9 <span>one-time</span></div>
+              <a
+                href="https://aiwali3.gumroad.com/l/inmee"
+                target="_blank"
+                class="prod-btn"
+                >Buy Now on Gumroad →</a
+              >
+            </div>
+          </div>
+          <div
+            class="prod-card reveal d1"
+            data-aos="flip-left"
+            data-aos-duration="1000"
+            data-aos-easing="ease-out-cubic"
+            data-aos-delay="300"
+            data-aos-offset="80"
+          >
+            <div class="prod-header">
+              <span class="prod-emoji"
+                ><svg viewBox="0 0 24 24">
+                  <rect x="5" y="3" width="14" height="18" rx="1.5" />
+                  <path d="M9 15v-4M12 15V8M15 15v-6" /></svg
+              ></span>
+              <h3>Professional CV Templates</h3>
+            </div>
+            <div class="prod-body">
+              <p>
+                ATS-friendly, professionally designed CV templates, job-winning
+                designs for every field.
+              </p>
+              <div class="prod-price">Coming Soon</div>
+              <a
+                href="https://aiwali3.gumroad.com/"
+                target="_blank"
+                class="prod-btn"
+                >Visit Store →</a
+              >
+            </div>
+          </div>
+          <div
+            class="prod-card reveal d2"
+            data-aos="flip-right"
+            data-aos-duration="1000"
+            data-aos-easing="ease-out-cubic"
+            data-aos-delay="400"
+            data-aos-offset="80"
+          >
+            <div class="prod-header">
+              <span class="prod-emoji"
+                ><svg viewBox="0 0 24 24">
+                  <path
+                    d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4z"
+                  /></svg
+              ></span>
+              <h3>Etsy Digital Downloads</h3>
+            </div>
+            <div class="prod-body">
+              <p>
+                Printable planners, templates, and AI tools: digital products
+                available on Etsy.
+              </p>
+              <div class="prod-price">Visit Store</div>
+              <a
+                href="https://www.etsy.com/people/nf03f5a5opnqiy2y"
+                target="_blank"
+                class="prod-btn"
+                >Shop on Etsy →</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLATFORMS -->
+    <section id="platforms" class="platforms-section">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <div class="sec-label">Find Us Everywhere</div>
+          <h2>Our Platforms</h2>
+          <p>Wherever you are, we're there too!</p>
+        </div>
+        <div class="platforms-grid">
+          <a
+            href="https://instagram.com/aiwalimadam"
+            target="_blank"
+            class="platform-card reveal"
+            data-aos="zoom-in"
+            data-aos-duration="1000"
+            data-aos-easing="ease-out-cubic"
+            data-aos-delay="200"
+            data-aos-offset="80"
+          >
+            <span class="platform-icon"
+              ><svg viewBox="0 0 24 24">
+                <rect x="3" y="3" width="18" height="18" rx="5" />
+                <circle cx="12" cy="12" r="4.2" />
+                <circle
+                  cx="17.3"
+                  cy="6.7"
+                  r="1"
+                  fill="#fff"
+                  stroke="none"
+                /></svg
+            ></span>
+            <div class="platform-name">Instagram</div>
+            <div class="platform-desc">Daily AI tips & content</div>
+          </a>
+          <a
+            href="https://facebook.com/aiwalimadam"
+            target="_blank"
+            class="platform-card reveal d1"
+            data-aos="zoom-in"
+            data-aos-duration="1000"
+            data-aos-easing="ease-out-cubic"
+            data-aos-delay="300"
+            data-aos-offset="80"
+          >
+            <span class="platform-icon"
+              ><svg viewBox="0 0 24 24">
+                <circle cx="9" cy="8" r="3.2" />
+                <circle cx="16" cy="9" r="2.6" />
+                <path
+                  d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M14.5 20c.3-2.6-.6-4.9-2.3-6.4a5.9 5.9 0 015.3-.9c1.9.7 3.5 2.6 3.5 5.3"
+                />
+              </svg>
+            </span>
+            <div class="platform-name">Facebook</div>
+            <div class="platform-desc">Community & updates</div>
+          </a>
+          <a
+            href="https://wa.me/923246610449"
+            target="_blank"
+            class="platform-card reveal d2"
+            data-aos="zoom-in"
+            data-aos-duration="1000"
+            data-aos-easing="ease-out-cubic"
+            data-aos-delay="400"
+            data-aos-offset="80"
+          >
+            <span class="platform-icon"
+              ><svg viewBox="0 0 24 24" stroke-width="1.4">
+                <path d="M12 3a9 9 0 00-7.6 13.8L3 21l4.4-1.3A9 9 0 1012 3z" />
+                <path
+                  d="M8.5 8.7c.2-.5.4-.5.6-.5h.5c.2 0 .4 0 .5.4.2.4.6 1.4.7 1.5.1.1.1.3 0 .5-.1.2-.2.3-.3.4l-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.1 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1.2-.2.7-.8.9-1 .2-.2.4-.2.6-.1.2.1 1.5.7 1.8.8.3.1.5.2.5.3 0 .2 0 .9-.4 1.3-.4.5-1.3.9-2 .9-.6 0-1.6-.2-3.3-1.1-2.6-1.4-4.2-4-4.4-4.2-.1-.2-1-1.3-1-2.5 0-1.2.6-1.8.8-2z"
+                  fill="var(--gold)"
+                  stroke="none"
+                /></svg
+            ></span>
+            <div class="platform-name">WhatsApp</div>
+            <div class="platform-desc">Direct consultation</div>
+          </a>
+          <a
+            href="https://aiwali3.gumroad.com/"
+            target="_blank"
+            class="platform-card reveal d1"
+            data-aos="zoom-in"
+            data-aos-duration="1000"
+            data-aos-easing="ease-out-cubic"
+            data-aos-delay="500"
+            data-aos-offset="80"
+          >
+            <span class="platform-icon"
+              ><svg viewBox="0 0 24 24">
+                <path
+                  d="M6 8h12l-1.2 11.2a1.5 1.5 0 01-1.5 1.3H8.7a1.5 1.5 0 01-1.5-1.3z"
+                />
+                <path d="M9 8a3 3 0 016 0" /></svg
+            ></span>
+            <div class="platform-name">Gumroad</div>
+            <div class="platform-desc">Digital products store</div>
+          </a>
+          <a
+            href="https://www.etsy.com/people/nf03f5a5opnqiy2y"
+            target="_blank"
+            class="platform-card reveal d2"
+            data-aos="zoom-in"
+            data-aos-duration="1000"
+            data-aos-easing="ease-out-cubic"
+            data-aos-delay="600"
+            data-aos-offset="80"
+          >
+            <span class="platform-icon"
+              ><svg viewBox="0 0 24 24">
+                <path d="M3 9l1.5-5h15L21 9" />
+                <path d="M4 9v10a1 1 0 001 1h14a1 1 0 001-1V9" />
+                <path d="M9 20v-6h6v6" /></svg
+            ></span>
+            <div class="platform-name">Etsy</div>
+            <div class="platform-desc">Creative digital downloads</div>
+          </a>
+          <a
+            href="https://pinterest.com/aiwalimadam"
+            target="_blank"
+            class="platform-card reveal d3"
+            data-aos="zoom-in"
+            data-aos-duration="1000"
+            data-aos-easing="ease-out-cubic"
+            data-aos-delay="700"
+            data-aos-offset="80"
+          >
+            <span class="platform-icon"
+              ><svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="9" />
+                <path
+                  d="M9.5 19c.7-2.5 1.4-5.1 2-7.7a2.6 2.6 0 015 .7c0 2-1.2 3.6-2.9 3.6-.8 0-1.4-.4-1.7-1"
+                /></svg
+            ></span>
+            <div class="platform-name">Pinterest</div>
+            <div class="platform-desc">Design inspiration & pins</div>
+          </a>
+          <a
+            href="#portfolio"
+            class="platform-card reveal"
+            data-aos="zoom-in"
+            data-aos-duration="1000"
+            data-aos-easing="ease-out-cubic"
+            data-aos-delay="800"
+            data-aos-offset="80"
+          >
+            <span class="platform-icon"
+              ><svg viewBox="0 0 24 24">
+                <path
+                  d="M12 3a9 9 0 100 18c1.1 0 2-.9 2-2 0-.5-.2-1-.6-1.4-.3-.4-.5-.8-.5-1.3 0-1 .8-1.8 1.8-1.8H16.5A4.5 4.5 0 0021 10.5C21 6.4 17 3 12 3z"
+                />
+                <circle
+                  cx="7.5"
+                  cy="11.5"
+                  r="1.2"
+                  fill="var(--gold)"
+                  stroke="none"
+                />
+                <circle
+                  cx="10"
+                  cy="7.5"
+                  r="1.2"
+                  fill="var(--gold)"
+                  stroke="none"
+                />
+                <circle
+                  cx="14.5"
+                  cy="7.5"
+                  r="1.2"
+                  fill="var(--gold)"
+                  stroke="none"
+                /></svg
+            ></span>
+            <div class="platform-name">Canva</div>
+            <div class="platform-desc">See designs made in Canva</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA / CONTACT -->
+    <section
+      class="cta-section"
+      id="contact"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      data-aos-easing="ease-out-cubic"
+      data-aos-delay="200"
+      data-aos-offset="200"
+    >
+      <div class="wrap">
+        <h2>Ready to Work Smarter?</h2>
+        <p>
+          AI tools, templates, or any other service, we're here for you! Get in
+          touch today.
+        </p>
+        <div class="cta-btns">
+          <a
+            href="https://wa.me/923246610449"
+            target="_blank"
+            class="cta-btn cb-wa"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"
+              />
+              <path
+                d="M12 0C5.373 0 0 5.373 0 12c0 2.117.553 4.103 1.522 5.83L0 24l6.341-1.498A11.946 11.946 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.898 0-3.67-.516-5.185-1.415l-.371-.22-3.865.913.944-3.755-.242-.388A9.954 9.954 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"
+              />
+            </svg>
+            WhatsApp
+          </a>
+          <a
+            href="https://instagram.com/aiwalimadam"
+            target="_blank"
+            class="cta-btn cb-ig"
+            ><svg
+              width="17"
+              height="17"
+              viewBox="0 0 24 24"
+              stroke="#fff"
+              fill="none"
+              stroke-width="1.8"
+            >
+              <rect x="3" y="3" width="18" height="18" rx="5" />
+              <circle cx="12" cy="12" r="4.2" />
+              <circle cx="17.3" cy="6.7" r="1" fill="#fff" stroke="none" />
+            </svg>
+            Instagram</a
+          >
+          <a
+            href="https://facebook.com/aiwalimadam"
+            target="_blank"
+            class="cta-btn cb-fb"
+            ><svg
+              width="17"
+              height="17"
+              viewBox="0 0 24 24"
+              stroke="#fff"
+              fill="none"
+              stroke-width="1.8"
+            >
+              <circle cx="9" cy="8" r="3.2" />
+              <circle cx="16" cy="9" r="2.6" />
+              <path
+                d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M14.5 20c.3-2.6-.6-4.9-2.3-6.4a5.9 5.9 0 015.3-.9c1.9.7 3.5 2.6 3.5 5.3"
+              />
+            </svg>
+            Facebook</a
+          >
+          <a
+            href="https://aiwali3.gumroad.com/"
+            target="_blank"
+            class="cta-btn cb-gm"
+            ><svg
+              width="17"
+              height="17"
+              viewBox="0 0 24 24"
+              stroke="#fff"
+              fill="none"
+              stroke-width="1.8"
+            >
+              <path
+                d="M6 8h12l-1.2 11.2a1.5 1.5 0 01-1.5 1.3H8.7a1.5 1.5 0 01-1.5-1.3z"
+              />
+              <path d="M9 8a3 3 0 016 0" />
+            </svg>
+            Gumroad</a
+          >
+          <a
+            href="https://www.etsy.com/people/nf03f5a5opnqiy2y"
+            target="_blank"
+            class="cta-btn cb-et"
+            ><svg
+              width="17"
+              height="17"
+              viewBox="0 0 24 24"
+              stroke="#fff"
+              fill="none"
+              stroke-width="1.8"
+            >
+              <path d="M3 9l1.5-5h15L21 9" />
+              <path d="M4 9v10a1 1 0 001 1h14a1 1 0 001-1V9" />
+              <path d="M9 20v-6h6v6" />
+            </svg>
+            Etsy</a
+          >
+          <a href="mailto:aiwalimadam@gmail.com" class="cta-btn cb-em"
+            ><svg
+              width="17"
+              height="17"
+              viewBox="0 0 24 24"
+              stroke="#fff"
+              fill="none"
+              stroke-width="1.8"
+            >
+              <rect x="3" y="5" width="18" height="14" rx="2" />
+              <path d="M3 7l9 6 9-6" />
+            </svg>
+            Email</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>
+        © <span id="footerYear">2026</span> <a href="#">AI Wali Madam</a> ·
+        Smart AI Tools & Services · Made with 💜 in Lahore, Pakistan
+      </p>
+      <p style="margin-top: 6px; font-size: 11px">
+        Also visit:
+        <a href="https://rabiaabbas-del.github.io">Academic Portfolio</a>
+      </p>
+    </footer>
+
+    <!-- AI CHATBOT -->
+    <button
+      class="chat-fab"
+      id="chatFab"
+      aria-label="Open chat assistant"
+      aria-expanded="false"
+    >
+      <span class="dot"></span>
+      <svg viewBox="0 0 24 24">
+        <path
+          d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.38 5.07L2 22l5.11-1.35C8.55 21.5 10.24 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm-2 13H8v-2h2v2zm0-3.5H8V9.13c0-1.85 1.31-2.63 2.34-3.29C11.2 5.28 12 4.77 12 3.9h2c0 1.86-1.24 2.63-2.24 3.26C10.9 7.75 10 8.34 10 9.13V11.5zm4 3.5h-2v-2h2v2z"
+        />
+      </svg>
+    </button>
+
+    <div
+      class="chat-panel"
+      id="chatPanel"
+      role="dialog"
+      aria-label="AiwaliMadam chat assistant"
+    >
+      <div class="chat-head">
+        <div class="av">🤖</div>
+        <div class="info">
+          <h4>AiwaliMadam Assistant</h4>
+          <span>Online · replies instantly</span>
+        </div>
+        <button class="chat-close" id="chatClose" aria-label="Close chat">
+          ✕
+        </button>
+      </div>
+      <div class="chat-body" id="chatBody">
+        <div class="chat-msg bot">
+          Hi! 👋 I'm here to help with Canva design, video editing, AI prompts,
+          academic support and more. Ask me about pricing, services or delivery
+          time, or tap a quick option below.
+        </div>
+      </div>
+      <div class="chat-quick" id="chatQuick">
+        <button data-q="pricing">💰 Pricing</button>
+        <button data-q="services">🧰 Services</button>
+        <button data-q="delivery">⏱️ Delivery Time</button>
+        <button data-q="whatsapp">💬 WhatsApp</button>
+      </div>
+      <form class="chat-input" id="chatForm">
+        <input
+          type="text"
+          id="chatInput"
+          placeholder="Type your question..."
+          autocomplete="off"
+          aria-label="Type your message"
+        />
+        <button type="submit" aria-label="Send message">➤</button>
+      </form>
+    </div>
+
+    <script>
+      /* ---- Footer year ---- */
+      document.getElementById("footerYear").textContent =
+        new Date().getFullYear();
+
+      /* ---- Mobile hamburger nav ---- */
+      (function () {
+        const burger = document.getElementById("navBurger");
+        const links = document.getElementById("navLinks");
+        if (!burger || !links) return;
+        function closeMenu() {
+          links.classList.remove("nav-open");
+          burger.setAttribute("aria-expanded", "false");
+        }
+        burger.addEventListener("click", () => {
+          const isOpen = links.classList.toggle("nav-open");
+          burger.setAttribute("aria-expanded", isOpen);
+        });
+        links
+          .querySelectorAll("a")
+          .forEach((a) => a.addEventListener("click", closeMenu));
+        document.addEventListener("click", (e) => {
+          if (!links.contains(e.target) && !burger.contains(e.target))
+            closeMenu();
+        });
+      })();
+
+      /* ---- Scroll progress bar + sticky nav shrink ---- */
+      const progressBar = document.getElementById("scrollProgress");
+      const mainNav = document.querySelector("nav");
+      window.addEventListener("scroll", () => {
+        const h = document.documentElement;
+        const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+        progressBar.style.width = pct + "%";
+        if (mainNav) mainNav.classList.toggle("nav-scrolled", h.scrollTop > 30);
+      });
+
+      /* ---- Dark / Light mode toggle ---- */
+      const root = document.documentElement;
+      const themeToggle = document.getElementById("themeToggle");
+      const savedTheme = localStorage.getItem("aiwm-theme");
+      if (savedTheme) root.setAttribute("data-theme", savedTheme);
+      else if (window.matchMedia("(prefers-color-scheme: dark)").matches)
+        root.setAttribute("data-theme", "dark");
+      themeToggle.addEventListener("click", () => {
+        const isDark = root.getAttribute("data-theme") === "dark";
+        root.setAttribute("data-theme", isDark ? "light" : "dark");
+        localStorage.setItem("aiwm-theme", isDark ? "light" : "dark");
+      });
+
+      /* ---- Audience filter for Services ---- */
+      (function () {
+        const tabs = document.querySelectorAll("#audTabs .aud-tab");
+        const cards = document.querySelectorAll("#svcGrid .svc-card");
+        tabs.forEach((tab) => {
+          tab.addEventListener("click", () => {
+            tabs.forEach((t) => t.classList.remove("active"));
+            tab.classList.add("active");
+            const aud = tab.dataset.aud;
+            cards.forEach((card) => {
+              const list = (card.dataset.aud || "").split(" ");
+              const match = aud === "all" || list.includes(aud);
+              if (match) {
+                card.classList.remove("svc-hide");
+                card.classList.add("svc-show");
+              } else {
+                card.classList.remove("svc-show");
+                card.classList.add("svc-hide");
+              }
+            });
+          });
+        });
+      })();
+
+      /* ---- Portfolio auto-carousel ---- */
+      (function () {
+        const wrap = document.getElementById("pfCarousel");
+        if (!wrap) return;
+        const slides = Array.from(wrap.querySelectorAll(".pf-card"));
+        const dotsWrap = document.getElementById("pfDots");
+        let current = 0,
+          timer;
+
+        slides.forEach((s, i) => {
+          const dot = document.createElement("button");
+          dot.className = "pf-dot" + (i === 0 ? " active" : "");
+          dot.setAttribute("aria-label", "Show portfolio slide " + (i + 1));
+          dot.addEventListener("click", () => {
+            goTo(i);
+            resetTimer();
+          });
+          dotsWrap.appendChild(dot);
+        });
+        const dots = Array.from(dotsWrap.children);
+
+        function fitBoxToImage(slide) {
+          const img = slide.querySelector("img");
+          function apply() {
+            const nw = img.naturalWidth,
+              nh = img.naturalHeight;
+            if (!nw || !nh) return;
+            const isMobile = window.innerWidth <= 480;
+            const cap = isMobile
+              ? Math.min(340, window.innerWidth * 0.88)
+              : 420;
+            const w = Math.min(cap, nw); // never upscale beyond native pixel size
+            wrap.style.width = w + "px";
+            wrap.style.aspectRatio = nw + "/" + nh;
+          }
+          if (img.complete && img.naturalWidth) apply();
+          else img.addEventListener("load", apply, { once: true });
+        }
+
+        function goTo(i) {
+          slides[current].classList.remove("active");
+          slides[current].classList.add("prev");
+          dots[current].classList.remove("active");
+          current = i;
+          slides.forEach((s, idx) => {
+            if (idx !== current) s.classList.remove("active");
+          });
+          slides[current].classList.remove("prev");
+          slides[current].classList.add("active");
+          dots[current].classList.add("active");
+          fitBoxToImage(slides[current]);
+        }
+        function next() {
+          goTo((current + 1) % slides.length);
+        }
+        function resetTimer() {
+          clearInterval(timer);
+          timer = setInterval(next, 1600);
+        }
+
+        fitBoxToImage(slides[0]);
+        wrap.addEventListener("mouseenter", () => clearInterval(timer));
+        wrap.addEventListener("mouseleave", resetTimer);
+        resetTimer();
+      })();
+
+      /* ---- Reveal on scroll ---- */
+      const io = new IntersectionObserver(
+        (e) => {
+          e.forEach((x) => {
+            if (x.isIntersecting) {
+              x.target.classList.add("in");
+              io.unobserve(x.target);
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
+      document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+
+      /* ---- AI Chatbot (rule-based, instant, works offline) ---- */
+      const chatFab = document.getElementById("chatFab");
+      const chatPanel = document.getElementById("chatPanel");
+      const chatClose = document.getElementById("chatClose");
+      const chatBody = document.getElementById("chatBody");
+      const chatForm = document.getElementById("chatForm");
+      const chatInput = document.getElementById("chatInput");
+      const chatQuick = document.getElementById("chatQuick");
+
+      function toggleChat(open) {
+        chatPanel.classList.toggle("open", open);
+        chatFab.setAttribute("aria-expanded", open);
+        if (open) chatInput.focus();
+      }
+      chatFab.addEventListener("click", () =>
+        toggleChat(!chatPanel.classList.contains("open")),
+      );
+      chatClose.addEventListener("click", () => toggleChat(false));
+
+      function addMsg(text, who) {
+        const div = document.createElement("div");
+        div.className = "chat-msg " + who;
+        div.textContent = text;
+        chatBody.appendChild(div);
+        chatBody.scrollTop = chatBody.scrollHeight;
+      }
+
+      const answers = {
+        pricing:
+          "Here's a quick rundown 💰\n• Canva Design: $8–10/design, 5 for $35\n• Video Editing: $25–40/video, 4/month for $120\n• YouTube Thumbnails: $12–15, 5 for $55\n• Social Media Bundle: $45 for 7 posts, 20/month for $100\n• CV/Presentation Templates: $30–35, 3 for $80\nFirst 10 clients get 30% off! Anything else needs a custom WhatsApp quote.",
+        services:
+          "I handle Canva design (posts, Pinterest pins, flyers, brand kits), video editing & YouTube thumbnails, AI tools & automation, ready-made AI prompts, CV/presentation templates, academic support, freelance content writing, and social media management. Basically, if it's digital or AI-related, I can do it!",
+        delivery:
+          "Standard delivery is 2–3 days, with rush delivery available for +20%. Every order includes 2 free revisions so we get it just right.",
+        whatsapp:
+          "Let's chat directly! 📲 Message me on WhatsApp: https://wa.me/923246610449",
+        products:
+          "You can grab ready-made digital products anytime: the AI Prompt Toolkit for Teachers ($9) on Gumroad, plus printable planners and templates on Etsy. Professional CV templates are coming soon!",
+        contact:
+          "You can reach me on WhatsApp (fastest), Instagram, Facebook, or email at aiwalimadam@gmail.com. Link is in the Contact section below 👇",
+        discount:
+          "Yes! The first 10 clients get 30% off on any service, just mention it when you message me on WhatsApp.",
+        hello:
+          "Hey there! 😊 How can I help: design, video, AI prompts, or something custom?",
+      };
+
+      function botReply(raw) {
+        const q = raw.toLowerCase();
+        if (/price|cost|rate|charge|fee/.test(q)) return answers.pricing;
+        if (/service|offer|what.*do|help with/.test(q)) return answers.services;
+        if (/deliver|time|how long|turnaround|revision/.test(q))
+          return answers.delivery;
+        if (/whatsapp|number|call|phone/.test(q)) return answers.whatsapp;
+        if (/product|gumroad|etsy|template|toolkit/.test(q))
+          return answers.products;
+        if (/contact|email|reach|instagram|facebook/.test(q))
+          return answers.contact;
+        if (/discount|offer|off|deal/.test(q)) return answers.discount;
+        if (/hi|hello|salam|assalam|hey/.test(q)) return answers.hello;
+        return "Great question! For anything custom, the fastest way is WhatsApp: https://wa.me/923246610449. Rabia replies personally to every message.";
+      }
+
+      chatQuick.addEventListener("click", (e) => {
+        const btn = e.target.closest("button[data-q]");
+        if (!btn) return;
+        const key = btn.dataset.q;
+        addMsg(btn.textContent.replace(/^[^\s]+\s/, ""), "user");
+        setTimeout(() => addMsg(answers[key], "bot"), 350);
+      });
+
+      chatForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const val = chatInput.value.trim();
+        if (!val) return;
+        addMsg(val, "user");
+        chatInput.value = "";
+        setTimeout(() => addMsg(botReply(val), "bot"), 400);
+      });
+    </script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        once: false,
+        duration: 900,
+        offset: 80,
+        easing: "ease-out-cubic",
+      });
+    </script>
+  </body>
+</html>

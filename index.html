@@ -357,7 +357,7 @@ footer a{color:var(--glow);text-decoration:none;}
         <div class="avatar-ring">
           <div class="inner">
             <img id="avatarImg" src="images/img4.jpg" alt="AiwaliMadam avatar" />
-            <video id="avatarVideo" src="images/avatar-talking.mp4" muted playsinline style="display:none;"></video>
+            <video id="avatarVideo" src="images/avatar-talking.mp4" muted playsinline preload="auto" style="display:none;"></video>
           </div>
         </div>
         <button class="speak-btn" id="speakBtn" aria-label="Hear AiwaliMadam speak" title="Tap to hear me">🔊</button>
@@ -648,8 +648,14 @@ document.querySelectorAll('.plat-card .ic img').forEach(img=>{
     }
   }
 
-  video.addEventListener('canplaythrough',()=>{ videoReady=true; tryAutoplayOnLoad(); },{once:true});
+  video.addEventListener('loadeddata',()=>{ videoReady=true; tryAutoplayOnLoad(); },{once:true});
+  video.addEventListener('canplay',()=>{ videoReady=true; tryAutoplayOnLoad(); },{once:true});
   video.addEventListener('error',()=>{ videoReady=false; });
+
+  // safety net: if the file loads but no ready event fired within 2s, check readyState directly
+  setTimeout(()=>{
+    if(!autoplayTried && video.readyState>=2){ videoReady=true; tryAutoplayOnLoad(); }
+  },2000);
 
   function showPhoto(){
     video.pause();

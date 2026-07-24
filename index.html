@@ -352,7 +352,8 @@ footer a{color:var(--glow);text-decoration:none;}
       <div class="avatar-stage">
         <div class="avatar-ring">
           <div class="inner">
-            <video id="avatarVideo" src="images/avatar-talking.mp4" poster="images/img4.jpg" autoplay muted loop playsinline></video>
+            <img id="avatarImg" src="images/img4.jpg" alt="AiwaliMadam avatar" />
+            <video id="avatarVideo" src="images/avatar-talking.mp4" muted loop playsinline style="display:none;"></video>
           </div>
         </div>
         <button class="speak-btn" id="speakBtn" aria-label="Hear AiwaliMadam speak" title="Tap to hear me">🔊</button>
@@ -610,12 +611,30 @@ document.querySelectorAll('.plat-card .ic img').forEach(img=>{
   });
 })();
 
-// talking avatar video — tap speaker to unmute the lip-synced video
+// talking avatar video — only swap in once it actually loads; photo stays as safe default
 (function(){
   const video=document.getElementById('avatarVideo');
+  const img=document.getElementById('avatarImg');
   const speakBtn=document.getElementById('speakBtn');
   if(!video || !speakBtn) return;
+  let videoReady=false;
+
+  video.addEventListener('canplay',()=>{
+    videoReady=true;
+    img.style.display='none';
+    video.style.display='block';
+    video.play().catch(()=>{});
+  },{once:true});
+
+  video.addEventListener('error',()=>{ videoReady=false; });
+
   speakBtn.addEventListener('click',()=>{
+    if(!videoReady){
+      speakBtn.title='Video not uploaded yet';
+      speakBtn.classList.add('speaking');
+      setTimeout(()=>speakBtn.classList.remove('speaking'),500);
+      return;
+    }
     video.muted=!video.muted;
     if(!video.muted){ video.currentTime=0; video.play(); speakBtn.textContent='🔈'; speakBtn.classList.add('speaking'); speakBtn.title='Tap to mute'; }
     else { speakBtn.textContent='🔊'; speakBtn.classList.remove('speaking'); speakBtn.title='Tap to hear me'; }

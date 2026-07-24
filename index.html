@@ -1,6 +1,3 @@
-
-
-Index · HTML
 <!doctype html>
 <html lang="en">
   <head>
@@ -23,7 +20,7 @@ Index · HTML
       rel="canonical"
       href="https://aiwalimadam-gif.github.io/aiwalimadam/"
     />
- 
+
     <!-- Open Graph / WhatsApp, Facebook, Instagram link previews -->
     <meta property="og:type" content="website" />
     <meta
@@ -43,7 +40,7 @@ Index · HTML
       content="https://aiwalimadam-gif.github.io/aiwalimadam/"
     />
     <meta property="og:site_name" content="AiwaliMadam" />
- 
+
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta
@@ -58,11 +55,11 @@ Index · HTML
       name="twitter:image"
       content="https://aiwalimadam-gif.github.io/aiwalimadam/images/hero-banner.jpg"
     />
- 
+
     <!-- Favicon -->
     <link rel="icon" type="image/jpeg" href="images/img1.jpg" />
     <link rel="apple-touch-icon" href="images/img2.jpg" />
- 
+
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Dancing+Script:wght@600;700&display=swap"
       rel="stylesheet"
@@ -133,6 +130,15 @@ Index · HTML
         transition:
           background 0.35s ease,
           color 0.35s ease;
+        animation: pageFadeIn 0.6s ease both;
+      }
+      @keyframes pageFadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
       }
       a {
         outline-offset: 3px;
@@ -143,7 +149,7 @@ Index · HTML
         outline-offset: 3px;
         border-radius: 4px;
       }
- 
+
       /* SCROLL PROGRESS */
       .scroll-progress {
         position: fixed;
@@ -155,7 +161,7 @@ Index · HTML
         z-index: 999;
         transition: width 0.1s linear;
       }
- 
+
       /* THEME TOGGLE */
       .theme-toggle {
         display: flex;
@@ -185,7 +191,7 @@ Index · HTML
       html:not([data-theme="dark"]) .theme-toggle .moon {
         opacity: 0.35;
       }
- 
+
       /* CARD THEMES (dark-mode aware) */
       .svc-card,
       .prod-card,
@@ -198,14 +204,14 @@ Index · HTML
       .why-card {
         background: black;
       }
- 
+
       .products-section {
         background: var(--bg);
       }
       html[data-theme="dark"] .products-section {
         background: linear-gradient(135deg, #160021, #1c0530);
       }
- 
+
       /* CHATBOT WIDGET */
       .chat-fab {
         position: fixed;
@@ -406,7 +412,7 @@ Index · HTML
           bottom: 16px;
         }
       }
- 
+
       /* HERO ROTATING WORDS */
       .hero-rotator {
         position: relative;
@@ -469,7 +475,7 @@ Index · HTML
           opacity: 0;
         }
       }
- 
+
       /* BG BLOBS */
       .blob1 {
         position: fixed;
@@ -519,7 +525,7 @@ Index · HTML
           animation: none;
         }
       }
- 
+
       /* REVEAL — Framer-style fade + rise + soft blur */
       .reveal {
         opacity: 0;
@@ -545,7 +551,7 @@ Index · HTML
       .d3 {
         transition-delay: 0.3s;
       }
- 
+
       /* NAV */
       nav {
         position: sticky;
@@ -608,7 +614,7 @@ Index · HTML
       .nav-links a:hover {
         color: var(--text);
       }
- 
+
       /* MOBILE HAMBURGER MENU */
       .nav-burger {
         display: none;
@@ -671,13 +677,41 @@ Index · HTML
           display: flex;
         }
       }
- 
+
       /* HERO / BANNER */
       .hero {
         position: relative;
         overflow: hidden;
         background: var(--purple);
         width: 100%;
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        background:
+          radial-gradient(circle at 20% 30%, rgba(168, 85, 247, 0.5), transparent 45%),
+          radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.45), transparent 45%),
+          radial-gradient(circle at 50% 100%, rgba(192, 132, 252, 0.35), transparent 50%);
+        background-size: 200% 200%;
+        animation: heroMesh 12s ease-in-out infinite;
+        mix-blend-mode: overlay;
+        pointer-events: none;
+      }
+      @keyframes heroMesh {
+        0%,
+        100% {
+          background-position: 0% 0%;
+        }
+        50% {
+          background-position: 100% 100%;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .hero::before {
+          animation: none;
+        }
       }
       .hero-banner {
   width: 100%;
@@ -689,6 +723,7 @@ Index · HTML
       .hero-overlay {
   position: absolute;
   inset: 0;
+  z-index: 2;
   background: linear-gradient(90deg, rgba(18,8,31,0.92) 0%, rgba(18,8,31,0.75) 40%, rgba(18,8,31,0.15) 75%, transparent 100%);
   display: flex;
   align-items: flex-end;
@@ -697,6 +732,47 @@ Index · HTML
       .hero-text {
         max-width: 520px;
         padding-top: 56px;
+      }
+      .hero-text .sub,
+      .hero-text h1,
+      .hero-text .tagline,
+      .hero-text .hero-rotator,
+      .hero-text .hero-cta {
+        opacity: 0;
+        transform: translateY(24px);
+        animation: heroRise 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+      .hero-text .sub {
+        animation-delay: 0.1s;
+      }
+      .hero-text h1 {
+        animation-delay: 0.25s;
+      }
+      .hero-text .tagline {
+        animation-delay: 0.4s;
+      }
+      .hero-text .hero-rotator {
+        animation-delay: 0.55s;
+      }
+      .hero-text .hero-cta {
+        animation-delay: 0.7s;
+      }
+      @keyframes heroRise {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .hero-text .sub,
+        .hero-text h1,
+        .hero-text .tagline,
+        .hero-text .hero-rotator,
+        .hero-text .hero-cta {
+          animation: none;
+          opacity: 1;
+          transform: none;
+        }
       }
       @media (max-width: 700px) {
         .hero-overlay {
@@ -814,7 +890,7 @@ Index · HTML
         transform: translateY(-2px);
         box-shadow: 0 8px 24px rgba(74, 0, 114, 0.4);
       }
- 
+
       /* PORTFOLIO */
       .portfolio-section {
         padding: 80px 0;
@@ -916,7 +992,7 @@ Index · HTML
         line-height: 1.7;
         margin-bottom: 20px;
       }
- 
+
       /* WRAP */
       .wrap {
         max-width: 1440px;
@@ -928,7 +1004,7 @@ Index · HTML
           padding: 0 32px;
         }
       }
- 
+
       /* SECTION */
       section {
         padding: 70px 0;
@@ -959,7 +1035,7 @@ Index · HTML
         font-size: 15px;
         max-width: 560px;
       }
- 
+
       /* PROFILE SECTION */
       .profile-section {
         /*  background: linear-gradient(360deg, var(--white), var(--pink)); */
@@ -991,7 +1067,7 @@ Index · HTML
           0 20px 50px rgba(0, 0, 0, 0.3);
         object-fit: cover;
       }
- 
+
       /* WATERMARK PROTECTION */
       .img-protect {
         position: relative;
@@ -1020,7 +1096,7 @@ Index · HTML
         border: 1px solid rgba(255, 255, 255, 0.25);
         z-index: 3;
       }
- 
+
       /* CREDENTIALS / TRUST SECTION */
       .cred-section {
         padding: 34px 0 40px;
@@ -1214,7 +1290,7 @@ Index · HTML
         letter-spacing: 0.5px;
         text-transform: uppercase;
       }
- 
+
       /* SERVICES */
       .services-grid {
         display: grid;
@@ -1231,7 +1307,7 @@ Index · HTML
           grid-template-columns: 1fr;
         }
       }
- 
+
       /* AUDIENCE FILTER TABS */
       .aud-tabs {
         display: flex;
@@ -1294,7 +1370,7 @@ Index · HTML
         position: relative;
         visibility: visible;
       }
- 
+
       .svc-card {
         background: #fff;
         border-radius: 20px;
@@ -1323,19 +1399,19 @@ Index · HTML
         pointer-events: none;
       }
       .svc-card:hover {
-        transform: translateY(-8px) scale(1.015);
-        box-shadow: 0 16px 36px rgba(74, 0, 114, 0.2);
-        border-color: rgba(155, 48, 255, 0.4);
+        transform: translateY(-14px) scale(1.03);
+        box-shadow: 0 24px 48px rgba(147, 51, 234, 0.35);
+        border-color: rgba(155, 48, 255, 0.55);
         transition:
-          transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-          box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-          border-color 0.35s ease;
+          transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+          box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+          border-color 0.4s ease;
       }
       .svc-icon {
-        transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
       }
       .svc-card:hover .svc-icon {
-        transform: scale(1.08) rotate(-3deg);
+        transform: scale(1.15) rotate(-6deg);
       }
       .svc-card:hover::before {
         opacity: 1;
@@ -1393,7 +1469,7 @@ Index · HTML
         background: rgba(240, 192, 64, 0.1);
         border-color: rgba(240, 192, 64, 0.25);
       }
- 
+
       .ic1 {
         background: linear-gradient(135deg, #e8d5ff, #d8b4fe);
       }
@@ -1418,13 +1494,13 @@ Index · HTML
       .ic8 {
         background: linear-gradient(135deg, #fef9c3, #fef08a);
       }
- 
+
       /* PRICING */
- 
+
       /* .pricing-section {
         background: linear-gradient(var(--white), var(--purple));
       } */
- 
+
       /* PRODUCTS */
       .products-section {
         background: var(--white);
@@ -1444,7 +1520,7 @@ Index · HTML
           grid-template-columns: 1fr;
         }
       }
- 
+
       .prod-card {
         background: #fff;
         border-radius: 20px;
@@ -1454,11 +1530,11 @@ Index · HTML
         transition: all 0.3s;
       }
       .prod-card:hover {
-        transform: translateY(-8px) scale(1.015);
-        box-shadow: 0 18px 36px rgba(74, 0, 114, 0.18);
+        transform: translateY(-14px) scale(1.03);
+        box-shadow: 0 26px 48px rgba(147, 51, 234, 0.3);
         transition:
-          transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-          box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+          transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+          box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
       }
       html[data-theme="dark"] .prod-card {
         background: var(--purpleDark);
@@ -1526,7 +1602,7 @@ Index · HTML
         opacity: 0.9;
         transform: translateY(-1px);
       }
- 
+
       /* PLATFORMS */
       .platforms-section {
         background: var(--white);
@@ -1558,7 +1634,7 @@ Index · HTML
           grid-template-columns: repeat(2, 1fr);
         }
       }
- 
+
       .platform-card {
         background: var(--white);
         border: 1px solid var(--violet);
@@ -1598,32 +1674,32 @@ Index · HTML
         stroke-linecap: round;
         stroke-linejoin: round;
       }
- 
+
       .platform-card:hover svg {
         stroke: var(--white);
       }
- 
+
       .platform-name {
         font-size: 13px;
         font-weight: 600;
         color: var(--violet);
- 
+
         margin-bottom: 3px;
       }
- 
+
       .platform-card:hover .platform-name {
         color: var(--white);
       }
- 
+
       .platform-desc {
         font-size: 10.5px;
         color: var(--violet);
       }
- 
+
       .platform-card:hover .platform-desc {
         color: var(--white);
       }
- 
+
       /* TESTIMONIAL / WHY */
       .why-grid {
         display: grid;
@@ -1676,7 +1752,7 @@ Index · HTML
         color: var(--dim);
         line-height: 1.7;
       }
- 
+
       /* CONTACT CTA */
       .cta-section {
         text-align: center;
@@ -1760,7 +1836,7 @@ Index · HTML
       .cb-em:hover {
         background: rgba(255, 255, 255, 0.25);
       }
- 
+
       footer {
         background: linear-gradient(135deg, var(--pink), var(--purple));
         color: var(--white);
@@ -1778,7 +1854,7 @@ Index · HTML
     <div class="scroll-progress" id="scrollProgress"></div>
     <div class="blob1"></div>
     <div class="blob2"></div>
- 
+
     <!-- NAV -->
     <nav>
       <div class="wrap">
@@ -1814,7 +1890,7 @@ Index · HTML
         </div>
       </div>
     </nav>
- 
+
      <!-- HERO BANNER --> 
      <div class="hero">
       <div class="img-protect" style="display:block;">
@@ -1843,7 +1919,7 @@ Index · HTML
         </div>
       </div>
     </div>
- 
+
     <!-- PROFILE -->
     <section class="profile-section reveal">
       <div class="wrap">
@@ -1895,7 +1971,7 @@ Index · HTML
         </div>
       </div>
     </section>
- 
+
     <!-- CREDENTIALS / TRUST -->
     <section class="cred-section reveal">
       <div
@@ -1914,7 +1990,7 @@ Index · HTML
           and prompt is built by someone who understands both the tech and the
           classroom.
         </p>
- 
+
         <div class="cred-stats">
           <div class="cred-stat">
             <div class="n">10+</div>
@@ -1933,7 +2009,7 @@ Index · HTML
             <div class="l">Certs</div>
           </div>
         </div>
- 
+
         <div class="cred-list">
           <div class="cred-item">
             <svg viewBox="0 0 24 24">
@@ -1984,7 +2060,7 @@ Index · HTML
             </div>
           </div>
         </div>
- 
+
         <div class="cred-cta">
           <a
             href="https://rabiaabbas-del.github.io/"
@@ -1995,7 +2071,7 @@ Index · HTML
         </div>
       </div>
     </section>
- 
+
     <!-- SERVICES -->
     <section id="services">
       <div
@@ -2171,7 +2247,7 @@ Index · HTML
         </div>
       </div>
     </section>
- 
+
     <!-- PORTFOLIO -->
     <section id="portfolio" class="portfolio-section">
       <div class="wrap">
@@ -2192,7 +2268,7 @@ Index · HTML
             />
             <div class="pf-tag">Canva Design</div>
           </div>
- 
+
           <div class="pf-card reveal" data-i="1">
             <img
               loading="lazy"
@@ -2201,7 +2277,7 @@ Index · HTML
             />
             <div class="pf-tag">Pinterest Pin</div>
           </div>
- 
+
           <div class="pf-card reveal" data-i="2">
             <img
               loading="lazy"
@@ -2210,7 +2286,7 @@ Index · HTML
             />
             <div class="pf-tag">YouTube Thumbnail</div>
           </div>
- 
+
           <div class="pf-card reveal" data-i="3">
             <img
               loading="lazy"
@@ -2219,7 +2295,7 @@ Index · HTML
             />
             <div class="pf-tag">Brand Kit</div>
           </div>
- 
+
           <div class="pf-card reveal" data-i="4">
             <img
               loading="lazy"
@@ -2228,7 +2304,7 @@ Index · HTML
             />
             <div class="pf-tag">Pinterest Pin</div>
           </div>
- 
+
           <div class="pf-card reveal" data-i="6">
             <img
               loading="lazy"
@@ -2237,7 +2313,7 @@ Index · HTML
             />
             <div class="pf-tag">Channel Banner</div>
           </div>
- 
+
           <div class="pf-card reveal" data-i="7">
             <img
               loading="lazy"
@@ -2246,7 +2322,7 @@ Index · HTML
             />
             <div class="pf-tag">YouTube Thumbnail</div>
           </div>
- 
+
           <div class="pf-card reveal" data-i="5">
             <img
               loading="lazy"
@@ -2272,7 +2348,7 @@ Index · HTML
         </div>
       </div>
     </section>
- 
+
     <!-- PRICING -->
     <section id="pricing" class="pricing-section reveal">
       <div class="wrap">
@@ -2566,7 +2642,7 @@ Index · HTML
         </div>
       </div>
     </section>
- 
+
     <!-- PRODUCTS -->
     <section id="products" class="products-section">
       <div class="wrap">
@@ -2673,7 +2749,7 @@ Index · HTML
         </div>
       </div>
     </section>
- 
+
     <!-- PLATFORMS -->
     <section id="platforms" class="platforms-section">
       <div class="wrap">
@@ -2852,7 +2928,7 @@ Index · HTML
         </div>
       </div>
     </section>
- 
+
     <!-- CTA / CONTACT -->
     <section
       class="cta-section"
@@ -2977,7 +3053,7 @@ Index · HTML
         </div>
       </div>
     </section>
- 
+
     <footer>
       <p>
         © <span id="footerYear">2026</span> <a href="#">AI Wali Madam</a> ·
@@ -2988,7 +3064,7 @@ Index · HTML
         <a href="https://rabiaabbas-del.github.io">Academic Portfolio</a>
       </p>
     </footer>
- 
+
     <!-- AI CHATBOT -->
     <button
       class="chat-fab"
@@ -3003,7 +3079,7 @@ Index · HTML
         />
       </svg>
     </button>
- 
+
     <div
       class="chat-panel"
       id="chatPanel"
@@ -3044,12 +3120,12 @@ Index · HTML
         <button type="submit" aria-label="Send message">➤</button>
       </form>
     </div>
- 
+
     <script>
       /* ---- Footer year ---- */
       document.getElementById("footerYear").textContent =
         new Date().getFullYear();
- 
+
       /* ---- Mobile hamburger nav ---- */
       (function () {
         const burger = document.getElementById("navBurger");
@@ -3071,7 +3147,7 @@ Index · HTML
             closeMenu();
         });
       })();
- 
+
       /* ---- Scroll progress bar + sticky nav shrink ---- */
       const progressBar = document.getElementById("scrollProgress");
       const mainNav = document.querySelector("nav");
@@ -3081,7 +3157,7 @@ Index · HTML
         progressBar.style.width = pct + "%";
         if (mainNav) mainNav.classList.toggle("nav-scrolled", h.scrollTop > 30);
       });
- 
+
       /* ---- Dark / Light mode toggle ---- */
       const root = document.documentElement;
       const themeToggle = document.getElementById("themeToggle");
@@ -3094,7 +3170,7 @@ Index · HTML
         root.setAttribute("data-theme", isDark ? "light" : "dark");
         localStorage.setItem("aiwm-theme", isDark ? "light" : "dark");
       });
- 
+
       /* ---- Audience filter for Services ---- */
       (function () {
         const tabs = document.querySelectorAll("#audTabs .aud-tab");
@@ -3118,7 +3194,7 @@ Index · HTML
           });
         });
       })();
- 
+
       /* ---- Portfolio auto-carousel ---- */
       (function () {
         const wrap = document.getElementById("pfCarousel");
@@ -3127,7 +3203,7 @@ Index · HTML
         const dotsWrap = document.getElementById("pfDots");
         let current = 0,
           timer;
- 
+
         slides.forEach((s, i) => {
           const dot = document.createElement("button");
           dot.className = "pf-dot" + (i === 0 ? " active" : "");
@@ -3139,7 +3215,7 @@ Index · HTML
           dotsWrap.appendChild(dot);
         });
         const dots = Array.from(dotsWrap.children);
- 
+
         function fitBoxToImage(slide) {
           const img = slide.querySelector("img");
           function apply() {
@@ -3157,7 +3233,7 @@ Index · HTML
           if (img.complete && img.naturalWidth) apply();
           else img.addEventListener("load", apply, { once: true });
         }
- 
+
         function goTo(i) {
           slides[current].classList.remove("active");
           slides[current].classList.add("prev");
@@ -3178,13 +3254,13 @@ Index · HTML
           clearInterval(timer);
           timer = setInterval(next, 1600);
         }
- 
+
         fitBoxToImage(slides[0]);
         wrap.addEventListener("mouseenter", () => clearInterval(timer));
         wrap.addEventListener("mouseleave", resetTimer);
         resetTimer();
       })();
- 
+
       /* ---- Reveal on scroll ---- */
       const io = new IntersectionObserver(
         (e) => {
@@ -3198,7 +3274,7 @@ Index · HTML
         { threshold: 0.1 },
       );
       document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
- 
+
       /* ---- AI Chatbot (rule-based, instant, works offline) ---- */
       const chatFab = document.getElementById("chatFab");
       const chatPanel = document.getElementById("chatPanel");
@@ -3207,7 +3283,7 @@ Index · HTML
       const chatForm = document.getElementById("chatForm");
       const chatInput = document.getElementById("chatInput");
       const chatQuick = document.getElementById("chatQuick");
- 
+
       function toggleChat(open) {
         chatPanel.classList.toggle("open", open);
         chatFab.setAttribute("aria-expanded", open);
@@ -3217,7 +3293,7 @@ Index · HTML
         toggleChat(!chatPanel.classList.contains("open")),
       );
       chatClose.addEventListener("click", () => toggleChat(false));
- 
+
       function addMsg(text, who) {
         const div = document.createElement("div");
         div.className = "chat-msg " + who;
@@ -3225,7 +3301,7 @@ Index · HTML
         chatBody.appendChild(div);
         chatBody.scrollTop = chatBody.scrollHeight;
       }
- 
+
       const answers = {
         pricing:
           "Here's a quick rundown 💰\n• Canva Design: $8–10/design, 5 for $35\n• Video Editing: $25–40/video, 4/month for $120\n• YouTube Thumbnails: $12–15, 5 for $55\n• Social Media Bundle: $45 for 7 posts, 20/month for $100\n• CV/Presentation Templates: $30–35, 3 for $80\nFirst 10 clients get 30% off! Anything else needs a custom WhatsApp quote.",
@@ -3244,7 +3320,7 @@ Index · HTML
         hello:
           "Hey there! 😊 How can I help: design, video, AI prompts, or something custom?",
       };
- 
+
       function botReply(raw) {
         const q = raw.toLowerCase();
         if (/price|cost|rate|charge|fee/.test(q)) return answers.pricing;
@@ -3260,7 +3336,7 @@ Index · HTML
         if (/hi|hello|salam|assalam|hey/.test(q)) return answers.hello;
         return "Great question! For anything custom, the fastest way is WhatsApp: https://wa.me/923246610449. Rabia replies personally to every message.";
       }
- 
+
       chatQuick.addEventListener("click", (e) => {
         const btn = e.target.closest("button[data-q]");
         if (!btn) return;
@@ -3268,7 +3344,7 @@ Index · HTML
         addMsg(btn.textContent.replace(/^[^\s]+\s/, ""), "user");
         setTimeout(() => addMsg(answers[key], "bot"), 350);
       });
- 
+
       chatForm.addEventListener("submit", (e) => {
         e.preventDefault();
         const val = chatInput.value.trim();
@@ -3277,6 +3353,24 @@ Index · HTML
         chatInput.value = "";
         setTimeout(() => addMsg(botReply(val), "bot"), 400);
       });
+
+      /* ---- Magnetic buttons (Framer-style cursor pull) ---- */
+      (function () {
+        const magnets = document.querySelectorAll(
+          ".btn, .cta-btn, .prod-btn"
+        );
+        magnets.forEach((el) => {
+          el.addEventListener("mousemove", (e) => {
+            const r = el.getBoundingClientRect();
+            const x = e.clientX - r.left - r.width / 2;
+            const y = e.clientY - r.top - r.height / 2;
+            el.style.transform = `translate(${x * 0.18}px, ${y * 0.35}px)`;
+          });
+          el.addEventListener("mouseleave", () => {
+            el.style.transform = "";
+          });
+        });
+      })();
     </script>
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script>
@@ -3289,4 +3383,3 @@ Index · HTML
     </script>
   </body>
 </html>
- 

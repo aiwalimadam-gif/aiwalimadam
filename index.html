@@ -61,7 +61,7 @@
     <link rel="apple-touch-icon" href="images/img2.jpg" />
 
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Dancing+Script:wght@600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@1,700;1,800&family=Cormorant+Garamond:ital,wght@1,600;1,700&display=swap"
       rel="stylesheet"
     />
     <style>
@@ -418,7 +418,7 @@
         position: absolute;
         top: 0;
         left: 0;
-        color: var(--gold2);
+        color: #6E4AE8;
         font-weight: 600;
         font-size: clamp(13px, 2vw, 17px);
         opacity: 0;
@@ -668,71 +668,118 @@
         }
       }
 
-      /* HERO / BANNER */
-      .hero {
+      /* HERO — split layout: real HTML text left, decorative avatar right */
+      .hero.hero-split {
         position: relative;
         overflow: hidden;
-        background: var(--purple);
         width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 48px;
+        padding: 72px 64px;
+        background: linear-gradient(120deg, #F3E8FF 0%, #E9D8FD 45%, #DDD6FE 100%);
       }
-      .hero-banner {
+      .hero-left {
+        flex: 0 0 44%;
+        max-width: 560px;
+        position: relative;
+        z-index: 2;
+      }
+      .hero-right {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+      }
+      .hero-avatar-wrap {
+        position: relative;
+        width: clamp(240px, 26vw, 380px);
+        height: clamp(240px, 26vw, 380px);
+        border-radius: 50%;
+        overflow: hidden;
+        border: 5px solid #ffffff;
+        box-shadow:
+          0 0 0 10px rgba(167, 139, 250, 0.25),
+          0 30px 60px rgba(124, 95, 189, 0.28);
+      }
+      .hero-avatar {
         width: 100%;
-        max-height: 420px;
+        height: 100%;
         object-fit: cover;
-        object-position: 100% center;
+        object-position: 78% 38%;
+        transform: scale(1.55);
         display: block;
       }
-      .hero-overlay {
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(90deg, rgba(124,95,189,0.88) 0%, rgba(124,95,189,0.65) 40%, rgba(155,135,196,0.12) 75%, transparent 100%);
-        display: flex;
-        align-items: flex-end;
-        padding: 0 60px 32px;
-      }
-      .hero-text {
-        max-width: 520px;
-        padding-top: 56px;
-      }
-      @media (max-width: 700px) {
-        .hero-overlay {
-          padding: 0 20px 20px;
-          background: rgba(124, 95, 189, 0.78);
+      @media (max-width: 900px) {
+        .hero.hero-split {
+          flex-direction: column;
+          text-align: center;
+          padding: 56px 28px;
+          gap: 32px;
         }
-        .hero-text {
-          padding-top: 50px;
+        .hero-left {
+          flex: none;
           max-width: 100%;
         }
-        .hero-banner {
-          max-height: 280px;
-        }
-        .hero-text h1 {
-          font-size: 38px;
+        .hero-pills,
+        .hero-cta {
+          justify-content: center;
         }
       }
-      .hero-text h1 {
-        font-family: "Dancing Script", cursive;
-        font-size: clamp(32px, 5vw, 58px);
-        color: var(--white);
+      .hero-heading {
+        font-family: "Playfair Display", serif;
+        font-style: italic;
         font-weight: 700;
-        line-height: 1.1;
-        margin-bottom: 6px;
-        text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+        letter-spacing: -1px;
+        font-size: clamp(40px, 6vw, 80px);
+        line-height: 1.05;
+        color: #6E4AE8;
+        margin-bottom: 8px;
       }
-      .hero-text .tagline {
-        font-size: clamp(13px, 2vw, 18px);
-        color: rgba(255, 255, 255, 0.92);
-        margin-bottom: 10px;
-        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      @media (max-width: 900px) {
+        .hero-heading {
+          font-size: 55px;
+        }
       }
-      .hero-text .sub {
-        font-size: clamp(11px, 1.5vw, 14px);
-        color: var(--gold2);
+      @media (max-width: 480px) {
+        .hero-heading {
+          font-size: 40px;
+        }
+      }
+      .hero-left .tagline {
+        font-family: "Cormorant Garamond", serif;
+        font-style: italic;
         font-weight: 600;
+        font-size: clamp(16px, 2.2vw, 22px);
+        color: var(--text);
+        margin-bottom: 18px;
+      }
+      .hero-left .sub {
+        font-size: clamp(11px, 1.5vw, 14px);
+        color: var(--purpleDark);
+        font-weight: 700;
         letter-spacing: 2px;
         text-transform: uppercase;
         margin-bottom: 14px;
-        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      }
+      .hero-pills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+      .hero-pill {
+        font-family: "Poppins", sans-serif;
+        font-size: 12.5px;
+        font-weight: 700;
+        letter-spacing: 0.3px;
+        color: #6E4AE8;
+        background: rgba(255, 255, 255, 0.7);
+        border: 1.5px solid rgba(110, 74, 232, 0.35);
+        padding: 8px 18px;
+        border-radius: 50px;
       }
       .hero-services-badge {
         display: inline-flex;
@@ -794,12 +841,12 @@
         box-shadow: 0 8px 24px rgba(201, 184, 240, 0.6);
       }
       .btn-outline {
-        border: 2px solid rgba(255, 255, 255, 0.6);
-        color: #fff;
+        border: 2px solid rgba(110, 74, 232, 0.5);
+        color: #6E4AE8;
       }
       .btn-outline:hover {
-        background: rgba(255, 255, 255, 0.15);
-        border-color: #fff;
+        background: rgba(110, 74, 232, 0.08);
+        border-color: #6E4AE8;
       }
       .btn-purple {
         background: var(--grad3);
@@ -1804,31 +1851,37 @@
       </div>
     </nav>
 
-     <!-- HERO BANNER --> 
-     <div class="hero">
-      <div class="img-protect" style="display:block;">
-          <img class="hero-banner" src="images/img4.jpg" alt="AI Wali Madam Banner"> 
-          <span class="wm-badge" style="bottom:auto;top:16px;">AiwaliMadam ✨</span> 
+     <!-- HERO SPLIT LAYOUT --> 
+     <div class="hero hero-split">
+      <div class="hero-left">
+        <div class="sub">✨ AI-Powered Solutions</div>
+        <h1 class="hero-heading">AIwaliMadam</h1>
+        <div class="tagline">Where AI Meets Excellence</div>
+        <div class="hero-pills">
+          <span class="hero-pill">Education</span>
+          <span class="hero-pill">AI Services</span>
+          <span class="hero-pill">Academic Support</span>
+          <span class="hero-pill">Social Growth</span>
+        </div>
+        <div class="hero-rotator" aria-hidden="true">
+          <ul>
+            <li>🎨 Canva Design &amp; Pinterest Pins</li>
+            <li>🎬 Video Editing &amp; YouTube Thumbnails</li>
+            <li>🤖 AI Tools &amp; Automation</li>
+            <li>🎓 Academic &amp; Research Support</li>
+            <li>📱 Social Media Management</li>
+            <li>🚀 Any Digital or AI Work, Done Right</li>
+          </ul>
+        </div>
+        <div class="hero-cta">
+          <a href="#products" class="btn btn-gold">🛍️ Shop Products</a>
+          <a href="#contact" class="btn btn-outline">💬 Get in Touch</a>
+        </div>
       </div>
-      <div class="hero-overlay">
-        <div class="hero-text">
-          <div class="sub">✨ AI-Powered Solutions</div>
-          <h1>AiwaliMadam</h1>
-          <div class="tagline">Where AI Meets Excellence</div>
-          <div class="hero-rotator" aria-hidden="true">
-            <ul>
-              <li>🎨 Canva Design &amp; Pinterest Pins</li>
-              <li>🎬 Video Editing &amp; YouTube Thumbnails</li>
-              <li>🤖 AI Tools &amp; Automation</li>
-              <li>🎓 Academic &amp; Research Support</li>
-              <li>📱 Social Media Management</li>
-              <li>🚀 Any Digital or AI Work, Done Right</li>
-            </ul>
-          </div>
-          <div class="hero-cta">
-            <a href="#products" class="btn btn-gold">🛍️ Shop Products</a>
-            <a href="#contact" class="btn btn-outline">💬 Get in Touch</a>
-          </div>
+      <div class="hero-right">
+        <div class="hero-avatar-wrap img-protect circle">
+          <img class="hero-avatar" src="images/img4.jpg" alt="AiwaliMadam illustrated avatar" />
+          <span class="wm-badge">AiwaliMadam ✨</span>
         </div>
       </div>
     </div>

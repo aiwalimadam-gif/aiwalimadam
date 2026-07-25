@@ -40,17 +40,20 @@ body{background:radial-gradient(ellipse 120% 60% at 30% -10%, rgba(139,92,246,0.
 
 /* FULL-PAGE INTRO SPLASH */
 body.intro-active{overflow:hidden;}
-.intro-splash{position:fixed;inset:0;z-index:2000;background:radial-gradient(ellipse 120% 80% at 50% 0%, #2D1652 0%, var(--void) 70%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;padding:40px;opacity:1;transition:opacity .6s ease,visibility .6s ease;}
+.intro-splash{position:fixed;inset:0;z-index:2000;background:radial-gradient(ellipse 120% 80% at 50% 0%, #2D1652 0%, var(--void) 70%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;padding:40px;opacity:1;transition:opacity .6s ease,visibility .6s ease;}
 .intro-splash.hidden{opacity:0;visibility:hidden;pointer-events:none;}
-.intro-skip{position:absolute;top:26px;right:26px;background:var(--panel2);border:1px solid var(--line);color:var(--ink);font-family:'JetBrains Mono',monospace;font-size:12px;padding:8px 16px;border-radius:50px;cursor:pointer;z-index:2;transition:border-color .2s;}
+.intro-skip{position:absolute;top:26px;right:26px;background:var(--panel2);border:1px solid var(--line);color:var(--ink);font-family:'JetBrains Mono',monospace;font-size:12px;padding:8px 16px;border-radius:50px;cursor:pointer;z-index:3;transition:border-color .2s;}
 .intro-skip:hover{border-color:var(--glow);}
-.intro-video-wrap{position:relative;width:min(70vw,340px);aspect-ratio:1;border-radius:50%;overflow:hidden;box-shadow:0 0 0 4px var(--void),0 0 0 6px var(--glow),0 40px 100px rgba(139,79,236,.5);}
+.intro-video-wrap{position:relative;width:min(88vw,560px);height:min(72vh,560px);border-radius:28px;overflow:hidden;box-shadow:0 0 0 1px var(--line),0 40px 100px rgba(139,79,236,.5);background:#000;}
 .intro-video-wrap video,.intro-video-wrap img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
 .intro-video-wrap video{display:none;}
+.intro-sound-btn{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:8px;background:rgba(11,4,20,.75);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.25);color:#fff;font-family:'JetBrains Mono',monospace;font-size:12.5px;padding:10px 18px;border-radius:50px;cursor:pointer;z-index:3;transition:all .2s;animation:pulseGlow 1.6s ease-in-out infinite;}
+.intro-sound-btn:hover{border-color:var(--glow);}
+.intro-sound-btn.hidden{display:none;}
 .intro-text{text-align:center;}
 .intro-text h2{font-family:'Fraunces',serif;font-weight:800;font-size:clamp(24px,4vw,36px);color:var(--heading);}
 .intro-text h2 .brand-ai{color:var(--glow);}
-@media (max-width:600px){.intro-video-wrap{width:78vw;}}
+@media (max-width:600px){.intro-video-wrap{width:92vw;height:60vh;border-radius:20px;}}
 a{color:inherit;}
 a:focus-visible,button:focus-visible{outline:2px solid var(--glow);outline-offset:3px;border-radius:4px;}
 img{max-width:100%;display:block;}
@@ -334,6 +337,7 @@ footer a{color:var(--glow);text-decoration:none;}
   <div class="intro-video-wrap">
     <video id="introVideo" src="images/avatar-talking.mp4" playsinline preload="auto"></video>
     <img id="introImg" src="images/img4.jpg" alt="AIwaliMadam" />
+    <button class="intro-sound-btn" id="introSoundBtn">🔊 Tap for sound</button>
   </div>
   <div class="intro-text">
     <div class="eyebrow" style="justify-content:center;">AI-Powered Solutions</div>
@@ -632,6 +636,7 @@ footer a{color:var(--glow);text-decoration:none;}
   const skip=document.getElementById('introSkip');
   const video=document.getElementById('introVideo');
   const img=document.getElementById('introImg');
+  const soundBtn=document.getElementById('introSoundBtn');
   if(!splash) return;
   document.body.classList.add('intro-active');
 
@@ -649,14 +654,18 @@ footer a{color:var(--glow);text-decoration:none;}
   video.addEventListener('canplay',()=>{
     img.style.display='none';
     video.style.display='block';
-    video.muted=false;
-    video.play().then(()=>{}).catch(()=>{
-      video.muted=true;
-      video.play().catch(()=>{});
-    });
+    video.muted=true;
+    video.play().catch(()=>{});
   },{once:true});
   video.addEventListener('error',()=>{ setTimeout(safeClose,1800); });
   video.addEventListener('ended',safeClose);
+
+  soundBtn.addEventListener('click',()=>{
+    video.muted=false;
+    video.currentTime=0;
+    video.play().catch(()=>{});
+    soundBtn.classList.add('hidden');
+  });
 
   // safety: never trap a visitor — auto-dismiss after 20s no matter what
   setTimeout(safeClose,20000);

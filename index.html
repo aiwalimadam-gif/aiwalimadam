@@ -40,20 +40,21 @@ body{background:radial-gradient(ellipse 120% 60% at 30% -10%, rgba(139,92,246,0.
 
 /* FULL-PAGE INTRO SPLASH */
 body.intro-active{overflow:hidden;}
-.intro-splash{position:fixed;inset:0;z-index:2000;background:radial-gradient(ellipse 120% 80% at 50% 0%, #2D1652 0%, var(--void) 70%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;padding:40px;opacity:1;transition:opacity .6s ease,visibility .6s ease;}
+.intro-splash{position:fixed;inset:0;z-index:2000;background:var(--void);overflow:hidden;opacity:1;transition:opacity .6s ease,visibility .6s ease;}
 .intro-splash.hidden{opacity:0;visibility:hidden;pointer-events:none;}
-.intro-skip{position:absolute;top:26px;right:26px;background:var(--panel2);border:1px solid var(--line);color:var(--ink);font-family:'JetBrains Mono',monospace;font-size:12px;padding:8px 16px;border-radius:50px;cursor:pointer;z-index:3;transition:border-color .2s;}
+.intro-skip{position:absolute;top:26px;right:26px;background:rgba(255,255,255,.1);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.3);color:#fff;font-family:'JetBrains Mono',monospace;font-size:12px;padding:8px 16px;border-radius:50px;cursor:pointer;z-index:5;transition:border-color .2s;}
 .intro-skip:hover{border-color:var(--glow);}
-.intro-video-wrap{position:relative;width:min(88vw,560px);height:min(72vh,560px);border-radius:28px;overflow:hidden;box-shadow:0 0 0 1px var(--line),0 40px 100px rgba(139,79,236,.5);background:#000;}
+.intro-video-wrap{position:absolute;inset:0;width:100%;height:100%;background:#000;}
 .intro-video-wrap video,.intro-video-wrap img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
 .intro-video-wrap video{display:none;}
-.intro-sound-btn{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:8px;background:rgba(11,4,20,.75);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.25);color:#fff;font-family:'JetBrains Mono',monospace;font-size:12.5px;padding:10px 18px;border-radius:50px;cursor:pointer;z-index:3;transition:all .2s;animation:pulseGlow 1.6s ease-in-out infinite;}
+.intro-video-wrap::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,4,20,.15) 0%,rgba(11,4,20,.1) 55%,rgba(11,4,20,.85) 100%);pointer-events:none;z-index:1;}
+.intro-sound-btn{position:absolute;bottom:14%;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:8px;background:rgba(11,4,20,.75);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.25);color:#fff;font-family:'JetBrains Mono',monospace;font-size:12.5px;padding:10px 18px;border-radius:50px;cursor:pointer;z-index:5;transition:all .2s;animation:pulseGlow 1.6s ease-in-out infinite;}
 .intro-sound-btn:hover{border-color:var(--glow);}
 .intro-sound-btn.hidden{display:none;}
-.intro-text{text-align:center;}
-.intro-text h2{font-family:'Fraunces',serif;font-weight:800;font-size:clamp(24px,4vw,36px);color:var(--heading);}
-.intro-text h2 .brand-ai{color:var(--glow);}
-@media (max-width:600px){.intro-video-wrap{width:92vw;height:60vh;border-radius:20px;}}
+.intro-text{position:absolute;bottom:5%;left:0;right:0;text-align:center;z-index:4;padding:0 20px;}
+.intro-text .eyebrow{justify-content:center;color:var(--glow2);}
+.intro-text h2{font-family:'Fraunces',serif;font-weight:800;font-size:clamp(24px,4vw,36px);color:#fff;}
+.intro-text h2 .brand-ai{color:var(--glow2);}
 a{color:inherit;}
 a:focus-visible,button:focus-visible{outline:2px solid var(--glow);outline-offset:3px;border-radius:4px;}
 img{max-width:100%;display:block;}
@@ -398,10 +399,8 @@ footer a{color:var(--glow);text-decoration:none;}
         <div class="avatar-ring">
           <div class="inner">
             <img id="avatarImg" src="images/img4.jpg" alt="AIwaliMadam avatar" />
-            <video id="avatarVideo" src="images/avatar-talking.mp4" muted playsinline preload="auto" style="display:none;"></video>
           </div>
         </div>
-        <button class="speak-btn" id="speakBtn" aria-label="Hear AIwaliMadam speak" title="Tap to hear me">🔊</button>
       </div>
     </div>
   </div>
@@ -707,84 +706,6 @@ document.querySelectorAll('.plat-card .ic img').forEach(img=>{
     root.setAttribute('data-theme', isDark?'light':'dark');
     localStorage.setItem('aiwm-theme', isDark?'light':'dark');
   });
-})();
-
-// talking avatar video — stays silent as a photo by default; plays once with sound on tap, then goes quiet again
-(function(){
-  const video=document.getElementById('avatarVideo');
-  const img=document.getElementById('avatarImg');
-  const speakBtn=document.getElementById('speakBtn');
-  const stage=document.getElementById('avatarStage');
-  if(!video || !speakBtn) return;
-  video.loop=false;
-  let videoReady=false;
-  let autoplayTried=false;
-
-  function tryAutoplayOnLoad(){
-    if(autoplayTried || !videoReady) return;
-    autoplayTried=true;
-    img.style.display='none';
-    video.style.display='block';
-    video.muted=false;
-    video.currentTime=0;
-    const p=video.play();
-    if(p && p.catch){
-      p.then(()=>{
-        speakBtn.textContent='🔈'; speakBtn.classList.add('speaking'); speakBtn.title='Playing...';
-        if(stage) stage.classList.add('is-speaking');
-      }).catch(()=>{
-        // browser blocked audible autoplay — fall back to a silent autoplay so she still "moves" on arrival
-        video.muted=true;
-        video.play().then(()=>{
-          if(stage) stage.classList.add('is-speaking');
-        }).catch(()=>{ showPhoto(); });
-      });
-    }
-  }
-
-  video.addEventListener('loadeddata',()=>{ videoReady=true; tryAutoplayOnLoad(); },{once:true});
-  video.addEventListener('canplay',()=>{ videoReady=true; tryAutoplayOnLoad(); },{once:true});
-  video.addEventListener('error',()=>{ videoReady=false; });
-
-  // safety net: if the file loads but no ready event fired within 2s, check readyState directly
-  setTimeout(()=>{
-    if(!autoplayTried && video.readyState>=2){ videoReady=true; tryAutoplayOnLoad(); }
-  },2000);
-
-  function showPhoto(){
-    video.pause();
-    video.currentTime=0;
-    video.style.display='none';
-    img.style.display='block';
-    speakBtn.textContent='🔊';
-    speakBtn.classList.remove('speaking');
-    speakBtn.title='Tap to hear me';
-    if(stage) stage.classList.remove('is-speaking');
-  }
-  function playSpeaking(){
-    img.style.display='none';
-    video.style.display='block';
-    video.muted=false;
-    video.currentTime=0;
-    video.play().catch(()=>{});
-    speakBtn.textContent='🔈';
-    speakBtn.classList.add('speaking');
-    speakBtn.title='Playing...';
-    if(stage) stage.classList.add('is-speaking');
-  }
-
-  speakBtn.addEventListener('click',()=>{
-    if(!videoReady){
-      speakBtn.title='Video not uploaded yet';
-      speakBtn.classList.add('speaking');
-      setTimeout(()=>speakBtn.classList.remove('speaking'),500);
-      return;
-    }
-    if(speakBtn.classList.contains('speaking')) showPhoto();
-    else playSpeaking();
-  });
-
-  video.addEventListener('ended',showPhoto);
 })();
 
 // mobile nav

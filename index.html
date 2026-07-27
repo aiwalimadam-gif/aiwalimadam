@@ -43,6 +43,12 @@ body.intro-active{overflow:hidden;}
 @media (max-width:700px){
   body.intro-active .orb{animation:none;display:none;}
   body.intro-active .scroll-progress{display:none;}
+  .intro-text{animation:none !important;}
+  .intro-text .shine-text{animation:none !important;-webkit-text-fill-color:var(--glow2) !important;background:none !important;}
+  .intro-text .intro-sparkle{animation:none !important;}
+  .intro-text .pulse-dot{animation:none !important;box-shadow:none !important;}
+  .intro-sound-btn{animation:none !important;}
+  .intro-skip,.intro-sound-btn{backdrop-filter:none !important;background:rgba(11,4,20,.85) !important;}
 }
 .intro-splash{position:fixed;inset:0;z-index:2000;background:var(--void);overflow:hidden;opacity:1;transition:opacity .6s ease,visibility .6s ease;}
 .intro-splash.hidden{opacity:0;visibility:hidden;pointer-events:none;}

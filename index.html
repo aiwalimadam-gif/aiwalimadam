@@ -648,6 +648,7 @@ footer a{color:var(--glow);text-decoration:none;}
   const soundBtn=document.getElementById('introSoundBtn');
   if(!splash) return;
   document.body.classList.add('intro-active');
+  const isMobile=window.innerWidth<=700;
 
   function closeIntro(){
     splash.classList.add('hidden');
@@ -669,16 +670,25 @@ footer a{color:var(--glow);text-decoration:none;}
     video.muted=true;
     video.play().catch(()=>{});
   }
-  // covers the normal case
-  video.addEventListener('canplay',startMutedAutoplay,{once:true});
-  // safety net: if canplay already fired before this script ran (fast cache load), or never fires, check directly
-  if(video.readyState>=3){ startMutedAutoplay(); }
-  setTimeout(()=>{ if(!started) startMutedAutoplay(); },1500);
+
+  if(isMobile){
+    // mobile: keep a clean static photo by default — no autoplay attempt, so nothing can ever look stuck.
+    // video only plays if the visitor explicitly taps for sound.
+    soundBtn.textContent='▶ Tap to play';
+  } else {
+    // covers the normal desktop case
+    video.addEventListener('canplay',startMutedAutoplay,{once:true});
+    // safety net: if canplay already fired before this script ran (fast cache load), or never fires, check directly
+    if(video.readyState>=3){ startMutedAutoplay(); }
+    setTimeout(()=>{ if(!started) startMutedAutoplay(); },1500);
+  }
 
   video.addEventListener('error',()=>{ setTimeout(safeClose,1800); });
   video.addEventListener('ended',safeClose);
 
   soundBtn.addEventListener('click',()=>{
+    img.style.display='none';
+    video.style.display='block';
     video.muted=false;
     video.currentTime=0;
     video.play().catch(()=>{});

@@ -40,6 +40,10 @@ body{background:radial-gradient(ellipse 120% 60% at 30% -10%, rgba(139,92,246,0.
 
 /* FULL-PAGE INTRO SPLASH */
 body.intro-active{overflow:hidden;}
+@media (max-width:700px){
+  body.intro-active .orb{animation:none;display:none;}
+  body.intro-active .scroll-progress{display:none;}
+}
 .intro-splash{position:fixed;inset:0;z-index:2000;background:var(--void);overflow:hidden;opacity:1;transition:opacity .6s ease,visibility .6s ease;}
 .intro-splash.hidden{opacity:0;visibility:hidden;pointer-events:none;}
 .intro-skip{position:absolute;top:26px;right:26px;background:rgba(255,255,255,.1);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.3);color:#fff;font-family:'JetBrains Mono',monospace;font-size:12px;padding:8px 16px;border-radius:50px;cursor:pointer;z-index:5;transition:border-color .2s;}
@@ -53,6 +57,12 @@ body.intro-active{overflow:hidden;}
 .intro-sound-btn:hover{border-color:var(--glow);}
 .intro-sound-btn.hidden{display:none;}
 .intro-text{position:absolute;top:6%;left:16%;z-index:4;text-align:left;width:min(560px,58vw);max-width:calc(100vw - 10%);overflow-wrap:break-word;word-break:break-word;animation:introFloat 4s ease-in-out infinite;}
+@media (max-width:700px){
+  .intro-text{left:6%;top:7%;width:88vw;max-width:88vw;}
+  .intro-text h2{font-size:26px !important;}
+  .intro-text .eyebrow{font-size:9.5px;}
+  .intro-text .intro-tagline{font-size:13px !important;}
+}
 .intro-text .eyebrow,.intro-text .intro-tagline{text-shadow:0 2px 6px rgba(0,0,0,.85),0 4px 20px rgba(0,0,0,.6);}
 .intro-text h2{filter:drop-shadow(0 2px 6px rgba(0,0,0,.85)) drop-shadow(0 4px 20px rgba(0,0,0,.6));}
 @media (max-height:640px){.intro-text h2{font-size:22px !important;} .intro-text .intro-tagline{font-size:12px !important;margin-top:4px !important;}}
@@ -329,7 +339,7 @@ footer a{color:var(--glow);text-decoration:none;}
   <button class="intro-skip" id="introSkip">Skip →</button>
   <div class="intro-video-wrap">
     <img class="intro-bg-blur" src="images/img4.png" alt="" aria-hidden="true" />
-    <video id="introVideo" src="images/avatar-talking.mp4" playsinline preload="auto"></video>
+    <video id="introVideo" src="images/avatar-talking.mp4" playsinline muted preload="auto"></video>
     <img id="introImg" src="images/img4.png" alt="AIwaliMadam" />
     <button class="intro-sound-btn" id="introSoundBtn">🔊 Tap for sound</button>
   </div>

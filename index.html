@@ -219,6 +219,11 @@ html:not([data-theme="dark"]) .theme-toggle .moon{opacity:.35;}
 .avatar-ring .inner{width:100%;height:100%;border-radius:50%;overflow:hidden;background:var(--void);position:relative;}
 .avatar-ring img,.avatar-ring video{width:100%;height:100%;object-fit:cover;object-position:center;}
 .avatar-ring .inner::after{content:'';position:absolute;top:-20%;left:-60%;width:35%;height:140%;background:linear-gradient(120deg,transparent,rgba(255,255,255,.18),transparent);animation:shineSweep 6s ease-in-out infinite;pointer-events:none;}
+.speak-btn{position:absolute;bottom:6%;right:6%;width:46px;height:46px;border-radius:50%;border:2px solid var(--void);background:linear-gradient(135deg,var(--core),var(--core2));color:#fff;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;padding:0;box-shadow:0 10px 26px rgba(139,79,236,.45);transition:transform .2s;z-index:6;}
+.speak-btn:hover{transform:scale(1.08);}
+.speak-btn.speaking{animation:pulseDot 1.2s ease-in-out infinite;}
+/* video/speaker feature is desktop-only — never shown or loaded on mobile, so it can never stutter there */
+@media (max-width:700px){.hero-video-desktop-only{display:none !important;}}
 
 .avatar-stage{position:relative;display:flex;justify-content:center;}
 .neon-ring{position:absolute;inset:-12px;border-radius:50%;padding:3px;background:conic-gradient(from var(--angle,0deg),var(--core),var(--glow),var(--core2),var(--glow2),var(--core));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:1;transition:opacity .4s ease;animation:spin 3.5s linear infinite;pointer-events:none;filter:drop-shadow(0 0 10px rgba(192,38,211,.5)) drop-shadow(0 0 22px rgba(139,92,246,.35));}
@@ -446,8 +451,10 @@ footer a{color:var(--glow);text-decoration:none;}
         <div class="avatar-ring">
           <div class="inner">
             <img id="avatarImg" src="images/img4.png" alt="AIwaliMadam avatar" />
+            <video id="heroVideo" class="hero-video-desktop-only" src="images/avatar-talking.mp4" muted playsinline preload="none" style="display:none;"></video>
           </div>
         </div>
+        <button class="speak-btn hero-video-desktop-only" id="heroSpeakBtn" aria-label="Hear AIwaliMadam speak" title="Tap to hear me">🔊</button>
       </div>
     </div>
   </div>
@@ -738,6 +745,47 @@ const INTRO_SPLASH_ENABLED = false;
   });
 
   setTimeout(safeClose,20000);
+})();
+
+// hero avatar video — desktop only (double safety: CSS hides it on mobile, AND this JS skips entirely on mobile)
+(function(){
+  if(window.innerWidth<=700) return; // never touch video on mobile — no load, no play, ever
+  const video=document.getElementById('heroVideo');
+  const img=document.getElementById('avatarImg');
+  const speakBtn=document.getElementById('heroSpeakBtn');
+  const stage=document.getElementById('avatarStage');
+  if(!video || !speakBtn) return;
+  video.preload='auto'; // now safe to preload since we've confirmed desktop
+  let ready=false;
+  video.addEventListener('canplaythrough',()=>{ ready=true; },{once:true});
+
+  function showPhoto(){
+    video.pause();
+    video.currentTime=0;
+    video.style.display='none';
+    img.style.display='block';
+    speakBtn.textContent='🔊';
+    speakBtn.classList.remove('speaking');
+    speakBtn.title='Tap to hear me';
+    if(stage) stage.classList.remove('is-speaking');
+  }
+  function playSpeaking(){
+    img.style.display='none';
+    video.style.display='block';
+    video.muted=false;
+    video.currentTime=0;
+    video.play().catch(()=>{});
+    speakBtn.textContent='🔈';
+    speakBtn.classList.add('speaking');
+    speakBtn.title='Playing...';
+    if(stage) stage.classList.add('is-speaking');
+  }
+  speakBtn.addEventListener('click',()=>{
+    if(speakBtn.classList.contains('speaking')) showPhoto();
+    else playSpeaking();
+  });
+  video.addEventListener('ended',showPhoto);
+  video.addEventListener('error',()=>{ speakBtn.style.display='none'; });
 })();
 
 // hero avatar image — auto-retry once if it fails to load (transient network glitch)

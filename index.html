@@ -58,7 +58,7 @@ body.intro-active{overflow:hidden;}
   .intro-sound-btn{animation:none !important;}
   .intro-skip,.intro-sound-btn{backdrop-filter:none !important;background:rgba(11,4,20,.85) !important;}
 }
-.intro-splash{position:fixed;inset:0;z-index:2000;background:var(--void);overflow:hidden;opacity:1;transition:opacity .6s ease,visibility .6s ease;}
+.intro-splash{display:none;position:fixed;inset:0;z-index:2000;background:var(--void);overflow:hidden;opacity:1;transition:opacity .6s ease,visibility .6s ease;}
 .intro-splash.hidden{opacity:0;visibility:hidden;pointer-events:none;}
 .intro-skip{position:absolute;top:26px;right:26px;background:rgba(255,255,255,.1);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.3);color:#fff;font-family:'JetBrains Mono',monospace;font-size:12px;padding:8px 16px;border-radius:50px;cursor:pointer;z-index:5;transition:border-color .2s;}
 .intro-skip:hover{border-color:var(--glow);}
@@ -677,14 +677,19 @@ footer a{color:var(--glow);text-decoration:none;}
 </div>
 
 <script>
-// full-page intro splash — plays talking avatar video full-screen once, then reveals site
+// full-page intro splash — currently OFF (see INTRO_SPLASH_ENABLED below). Video is already
+// shared separately on WhatsApp/social, so showing it again here was likely causing quick
+// drop-off. To re-enable later: set the flag to true AND remove "display:none" from .intro-splash in the CSS above.
+const INTRO_SPLASH_ENABLED = false;
 (function(){
   const splash=document.getElementById('introSplash');
+  if(!splash) return;
+  if(!INTRO_SPLASH_ENABLED) return; // CSS display:none already hides it; just skip the logic entirely
+
   const skip=document.getElementById('introSkip');
   const video=document.getElementById('introVideo');
   const img=document.getElementById('introImg');
   const soundBtn=document.getElementById('introSoundBtn');
-  if(!splash) return;
   const isMobile=window.innerWidth<=700;
 
   if(isMobile){
@@ -716,9 +721,7 @@ footer a{color:var(--glow);text-decoration:none;}
     video.play().catch(()=>{});
   }
 
-  // desktop only — this code is unreachable for mobile since it already returned above
   video.addEventListener('canplay',startMutedAutoplay,{once:true});
-  // safety net: if canplay already fired before this script ran (fast cache load), or never fires, check directly
   if(video.readyState>=3){ startMutedAutoplay(); }
   setTimeout(()=>{ if(!started) startMutedAutoplay(); },1500);
 
@@ -734,7 +737,6 @@ footer a{color:var(--glow);text-decoration:none;}
     soundBtn.classList.add('hidden');
   });
 
-  // safety: never trap a visitor — auto-dismiss after 20s no matter what
   setTimeout(safeClose,20000);
 })();
 

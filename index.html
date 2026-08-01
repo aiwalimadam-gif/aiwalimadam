@@ -16,6 +16,86 @@
 <link rel="icon" type="image/png" href="images/img1.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600;1,9..144,700&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- Structured data: tells Google & AI search engines exactly who AIwaliMadam is -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "AIwaliMadam",
+  "description": "AI-powered Canva design, video editing, YouTube thumbnails, ready-made AI prompts, CV templates and academic support, run by an MS Computer Science lecturer and PhD candidate based in Lahore, Pakistan.",
+  "url": "https://aiwalimadam-gif.github.io/aiwalimadam/",
+  "email": "aiwalimadam@gmail.com",
+  "telephone": "+92-314-4271614",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Lahore",
+    "addressCountry": "PK"
+  },
+  "sameAs": [
+    "https://instagram.com/aiwalimadam",
+    "https://facebook.com/aiwalimadam",
+    "https://pinterest.com/aiwalimadam"
+  ],
+  "priceRange": "$8-$120",
+  "founder": {
+    "@type": "Person",
+    "jobTitle": "Lecturer & PhD Candidate",
+    "description": "MS Computer Science, PhD candidate in HCI and AI in Education, university lecturer with 10+ years teaching experience."
+  }
+}
+</script>
+
+<!-- Structured data: FAQ section, helps AIwaliMadam show up in Google/AI search answers -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is everything made purely by AI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. AI tools are used where they genuinely speed things up, but every project is guided by real expertise from an MS Computer Science graduate and PhD candidate with 10+ years of teaching experience."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How fast is delivery?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Standard delivery is 2-3 days depending on the service. Rush delivery is available for an additional 20%."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work with clients outside Pakistan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, AIwaliMadam works with clients worldwide. Prices are listed in USD, and PKR pricing is available on request for Pakistani clients."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if I'm not happy with the result?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every order includes 2 rounds of revisions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I order or pay?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Custom services are booked directly via WhatsApp. Digital products are purchased through Gumroad or Etsy."
+      }
+    }
+  ]
+}
+</script>
+
 <style>
 :root{
   --void:#FFFFFF;
@@ -266,6 +346,9 @@ section{padding:100px 0;position:relative;z-index:1;}
 .cred-cta{margin-top:36px;}
 .cred-cta a{font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--glow);text-decoration:none;border-bottom:1px solid var(--glow);padding-bottom:2px;}
 
+/* ABOUT NARRATIVE */
+.about-narrative{color:var(--ink);font-size:14.5px;line-height:1.75;max-width:680px;margin-top:22px;}
+
 /* AUDIENCE TABS */
 .aud-tabs{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:44px;}
 .aud-tab{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;color:var(--ink-muted);background:var(--panel2);border:1px solid var(--line);padding:9px 18px;border-radius:50px;cursor:pointer;transition:all .25s;white-space:nowrap;}
@@ -299,6 +382,7 @@ section{padding:100px 0;position:relative;z-index:1;}
 .pf-note p{color:var(--ink-muted);font-size:13.5px;line-height:1.7;margin-bottom:20px;}
 
 /* PRICING PRODUCTS */
+.pricing-note{font-size:13px;color:var(--ink-muted);margin-top:14px;}
 .price-card{background:var(--panel);border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:transform .35s cubic-bezier(.16,1,.3,1);}
 .price-card:hover{transform:translateY(-8px);}
 .price-head{padding:24px;background:linear-gradient(135deg,var(--deep),var(--core));text-align:center;}
@@ -330,6 +414,26 @@ section{padding:100px 0;position:relative;z-index:1;}
 .plat-card .name{font-family:'Fraunces',serif;font-weight:600;font-size:13.5px;color:var(--heading);margin-bottom:2px;}
 .plat-card .desc{font-size:10.5px;color:var(--ink-muted);}
 
+/* FAQ */
+.faq-section .sec-head{margin-bottom:36px;}
+.faq-list{max-width:760px;}
+.faq-item{border-bottom:1px solid var(--line);}
+.faq-question{width:100%;text-align:left;background:none;border:none;font-family:'Manrope',sans-serif;font-size:15px;font-weight:700;color:var(--heading);padding:20px 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;}
+.faq-question::after{content:'+';color:var(--glow);font-size:20px;font-weight:400;flex-shrink:0;transition:transform .25s ease;}
+.faq-question.active::after{content:'−';}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;}
+.faq-answer p{padding-bottom:18px;color:var(--ink-muted);font-size:13.5px;line-height:1.7;max-width:640px;}
+
+/* BLOG PREVIEW */
+.blog-preview .sec-head{margin-bottom:36px;}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+@media (max-width:800px){.blog-grid{grid-template-columns:1fr;}}
+.blog-post-card{display:block;padding:20px;border-radius:16px;background:var(--panel);border:1px solid var(--line);text-decoration:none;color:inherit;transition:transform .3s cubic-bezier(.16,1,.3,1),border-color .3s ease;}
+.blog-post-card:hover{transform:translateY(-6px);border-color:var(--glow);}
+.blog-post-card h3{font-family:'Fraunces',serif;font-weight:600;font-size:14.5px;color:var(--heading);line-height:1.4;}
+.blog-post-card span{display:inline-block;margin-top:10px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--glow);}
+.blog-loading{color:var(--ink-muted);font-size:13px;}
+
 /* CONTACT */
 .contact-section{text-align:center;}
 .contact-section h2{font-family:'Fraunces',serif;font-style:italic;font-weight:600;font-size:clamp(30px,5vw,54px);color:var(--heading);margin-bottom:14px;}
@@ -341,6 +445,7 @@ section{padding:100px 0;position:relative;z-index:1;}
 
 footer{border-top:1px solid var(--line);text-align:center;padding:32px 22px;font-size:12.5px;color:var(--ink-muted);}
 footer a{color:var(--glow);text-decoration:none;}
+footer .footer-links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:8px;}
 
 /* CHATBOT */
 .chat-fab{position:fixed;bottom:24px;right:24px;width:58px;height:58px;border-radius:50%;background:linear-gradient(135deg,var(--core),var(--core2));box-shadow:0 10px 30px rgba(124,58,237,.45);display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:998;border:none;}
@@ -413,6 +518,7 @@ footer a{color:var(--glow);text-decoration:none;}
       <li><a href="#pricing">Pricing</a></li>
       <li><a href="#products">Products</a></li>
       <li><a href="#platforms">Platforms</a></li>
+      <li><a href="#faq">FAQ</a></li>
       <li><a href="https://aiwalimadam.blogspot.com" target="_blank">Blog</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -476,6 +582,10 @@ footer a{color:var(--glow);text-decoration:none;}
     <div class="eyebrow reveal">Verified Credentials</div>
     <h2 class="sec-head reveal d1" style="margin-bottom:0;"><span style="font-family:'Fraunces',serif;font-style:italic;font-weight:600;font-size:clamp(26px,3.6vw,38px);color:var(--heading);">Real expertise <em class="shine-text" style="font-style:italic;">behind every tool</em></span></h2>
     <p class="reveal d1" style="color:var(--ink-muted);margin-top:14px;max-width:560px;font-size:14.5px;">MS Computer Science, PhD candidate, 10+ years teaching. Every design and prompt is built by someone who understands both the tech and the classroom.</p>
+
+    <p class="about-narrative reveal d1">
+      AIwaliMadam started with a simple idea: pair real academic and technical expertise with the speed of AI tools, so people get professional work done without the wait. Behind every design, prompt, and project is an MS Computer Science graduate, a PhD candidate in HCI and AI in Education, and a university lecturer with over 10 years in the classroom. That means every deliverable is built on genuine subject knowledge, not just a prompt typed into a chatbot. AIwaliMadam is currently welcoming its first clients, with the same care and attention going into every single project, personally, from start to finish.
+    </p>
 
     <div class="cred-stats">
       <div class="cred-stat reveal"><div class="n" data-count="10" data-suffix="+">0</div><div class="l">Yrs Teaching</div></div>
@@ -583,6 +693,7 @@ footer a{color:var(--glow);text-decoration:none;}
       <div class="eyebrow">Launch Offer</div>
       <h2>Beginner-friendly <em>pricing</em></h2>
       <p>New business, friend-like rates, and I design and edit everything myself. First 10 clients get 30% off.</p>
+      <p class="pricing-note reveal">Prices are listed in USD for international clients. Pakistani clients can request PKR pricing directly on WhatsApp.</p>
     </div>
     <div class="grid-3">
       <div class="price-card reveal"><div class="price-head"><span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><circle cx="17.5" cy="17.5" r="3.5"/></svg></span><h3>Canva Design</h3></div><div class="price-body"><p>Social post, Pinterest pin, flyer: from a single design to a full bundle.</p><div class="price-tag">$8–10 <span>/ design</span></div><div class="price-sub">Bundle: 5 designs $35 · Monthly (10): $60</div><a href="https://wa.me/923144271614?text=Hi!%20Mujhe%20Canva%20Design%20chahiye" target="_blank" class="price-btn">Book on WhatsApp →</a></div></div>
@@ -616,6 +727,20 @@ footer a{color:var(--glow);text-decoration:none;}
   </div>
 </section>
 
+<!-- BLOG PREVIEW -->
+<section id="blog-preview" class="blog-preview">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">From the Blog</div>
+      <h2>Latest <em>tips &amp; guides</em></h2>
+      <p>Free tips, tutorials, and behind-the-scenes on AI tools and Canva design.</p>
+    </div>
+    <div class="blog-grid reveal" id="blogGrid">
+      <p class="blog-loading">Loading latest posts...</p>
+    </div>
+  </div>
+</section>
+
 <!-- PLATFORMS -->
 <section id="platforms">
   <div class="wrap">
@@ -637,6 +762,39 @@ footer a{color:var(--glow);text-decoration:none;}
   </div>
 </section>
 
+<!-- FAQ -->
+<section id="faq" class="faq-section">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Good to Know</div>
+      <h2>Frequently Asked <em>Questions</em></h2>
+      <p>Quick answers before you reach out.</p>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-question">Is everything made purely by AI?</button>
+        <div class="faq-answer"><p>No. AI tools are used where they genuinely speed things up, but every project is guided by real expertise: an MS in Computer Science, a PhD in progress, and 10+ years of teaching experience. AI is a tool here, not the whole service.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">How fast is delivery?</button>
+        <div class="faq-answer"><p>Standard delivery is 2-3 days depending on the service. Rush delivery is available for an additional 20% if you need it faster.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Do you work with clients outside Pakistan?</button>
+        <div class="faq-answer"><p>Yes, AIwaliMadam works with clients worldwide. Prices are listed in USD. Pakistani clients can request PKR pricing directly on WhatsApp.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">What if I'm not happy with the result?</button>
+        <div class="faq-answer"><p>Every order includes 2 rounds of revisions to make sure the final result matches what you need.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">How do I order or pay?</button>
+        <div class="faq-answer"><p>For custom services (design, video editing, templates), message directly on WhatsApp to discuss details and payment. For digital products like the AI Prompt Toolkit, purchase directly through Gumroad or Etsy.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact" class="contact-section">
   <div class="wrap">
@@ -654,8 +812,12 @@ footer a{color:var(--glow);text-decoration:none;}
 </section>
 
 <footer>
-  © <span id="yr">2026</span> AIwaliMadam · Smart AI Tools &amp; Services · Made with 💜 in Lahore, Pakistan<br/>
-  <a href="https://rabiaabbas-del.github.io">Also visit: Academic Portfolio</a>
+  © <span id="yr">2026</span> AIwaliMadam · Smart AI Tools &amp; Services · Made with 💜 in Lahore, Pakistan
+  <div class="footer-links">
+    <a href="https://rabiaabbas-del.github.io" target="_blank" rel="noopener">Academic Portfolio</a>
+    <span>·</span>
+    <a href="privacy-policy.html">Privacy Policy</a>
+  </div>
 </footer>
 
 <!-- CHATBOT -->
@@ -925,6 +1087,50 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
       });
     });
   });
+})();
+
+// FAQ accordion
+(function(){
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const answer = btn.nextElementSibling;
+      const isOpen = btn.classList.contains('active');
+      document.querySelectorAll('.faq-question').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.faq-answer').forEach(a => a.style.maxHeight = null);
+      if (!isOpen) {
+        btn.classList.add('active');
+        answer.style.maxHeight = answer.scrollHeight + "px";
+      }
+    });
+  });
+})();
+
+// blog preview — pulls latest 3 posts from Blogger automatically
+(function(){
+  const grid = document.getElementById('blogGrid');
+  if(!grid) return;
+  fetch('https://aiwalimadam.blogspot.com/feeds/posts/default?alt=json&max-results=3')
+    .then(res => res.json())
+    .then(data => {
+      const entries = (data.feed && data.feed.entry) || [];
+      if(!entries.length){ throw new Error('no posts'); }
+      grid.innerHTML = '';
+      entries.forEach(entry => {
+        const title = entry.title.$t;
+        const linkObj = entry.link.find(l => l.rel === 'alternate');
+        const link = linkObj ? linkObj.href : 'https://aiwalimadam.blogspot.com';
+        const a = document.createElement('a');
+        a.href = link;
+        a.target = '_blank';
+        a.rel = 'noopener';
+        a.className = 'blog-post-card';
+        a.innerHTML = `<h3>${title}</h3><span>Read more →</span>`;
+        grid.appendChild(a);
+      });
+    })
+    .catch(() => {
+      grid.innerHTML = '<a href="https://aiwalimadam.blogspot.com" target="_blank" class="blog-post-card"><h3>Visit the blog for the latest tips &amp; guides</h3><span>Read more →</span></a>';
+    });
 })();
 
 // chatbot
